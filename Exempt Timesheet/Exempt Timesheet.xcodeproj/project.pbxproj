@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		780583101614E2DA00751685 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805830F1614E2DA00751685 /* Day.m */; };
+		780583131614E34200751685 /* AbsenceType.m in Sources */ = {isa = PBXBuildFile; fileRef = 780583121614E34200751685 /* AbsenceType.m */; };
+		7805831916155AE300751685 /* ConfirmationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7805831716155AE200751685 /* ConfirmationViewController.m */; };
+		7805831A16155AE300751685 /* ConfirmationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7805831816155AE300751685 /* ConfirmationViewController.xib */; };
+		780583261616B9FC00751685 /* AbsenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780583241616B9F100751685 /* AbsenceViewController.m */; };
+		780583271616B9FC00751685 /* AbsenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 780583251616B9F200751685 /* AbsenceViewController.xib */; };
+		7805832B1616BB0A00751685 /* EditAbsenceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 780583291616BB0700751685 /* EditAbsenceTableViewController.m */; };
+		7805832C1616BB0A00751685 /* EditAbsenceTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7805832A1616BB0700751685 /* EditAbsenceTableViewController.xib */; };
+		78C9867A1610FE5D00A2F770 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C986791610FE5D00A2F770 /* UIKit.framework */; };
+		78C9867C1610FE5D00A2F770 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C9867B1610FE5D00A2F770 /* Foundation.framework */; };
+		78C986821610FE5D00A2F770 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78C986801610FE5D00A2F770 /* InfoPlist.strings */; };
+		78C986841610FE5D00A2F770 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986831610FE5D00A2F770 /* main.m */; };
+		78C986881610FE5D00A2F770 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986871610FE5D00A2F770 /* AppDelegate.m */; };
+		78C9868B1610FE5D00A2F770 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9868A1610FE5D00A2F770 /* MasterViewController.m */; };
+		78C9868E1610FE5D00A2F770 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9868D1610FE5D00A2F770 /* DetailViewController.m */; };
+		78C986911610FE5D00A2F770 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C9868F1610FE5D00A2F770 /* MasterViewController.xib */; };
+		78C986941610FE5D00A2F770 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C986921610FE5D00A2F770 /* DetailViewController.xib */; };
+		78C986E31613E00B00A2F770 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E11613E00A00A2F770 /* LoginViewController.m */; };
+		78C986E41613E00B00A2F770 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C986E21613E00B00A2F770 /* LoginViewController.xib */; };
+		78C986E71613E17600A2F770 /* wcmc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C986E61613E17600A2F770 /* wcmc_logo.png */; };
+		78C986EA1613EF7900A2F770 /* LDAPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E91613EF7900A2F770 /* LDAPService.m */; };
+		78C99F0E1613FE5800A2F770 /* libldap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99EC81613FC0800A2F770 /* libldap.a */; };
+		78C99F0F1613FE6900A2F770 /* liblber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99ECA1613FC0800A2F770 /* liblber.a */; };
+		78C99F131613FE6900A2F770 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F101613FE6900A2F770 /* libcrypto.a */; };
+		78C99F141613FE6900A2F770 /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F111613FE6900A2F770 /* libsasl2.a */; };
+		78C99F151613FE6900A2F770 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F121613FE6900A2F770 /* libssl.a */; };
+		78C99F2C16149DF200A2F770 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F2A16149DF200A2F770 /* MainViewController.m */; };
+		78C99F2D16149DF200A2F770 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F2B16149DF200A2F770 /* MainViewController.xib */; };
+		78C99F2F1614D0E800A2F770 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F2E1614D0E800A2F770 /* Icon.png */; };
+		78C99F311614D0ED00A2F770 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F301614D0ED00A2F770 /* Icon@2x.png */; };
+		78C99F331614D77500A2F770 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F321614D77400A2F770 /* Default.png */; };
+		78C99F371614DB5000A2F770 /* TimesheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F351614DB4F00A2F770 /* TimesheetViewController.m */; };
+		78C99F381614DB5100A2F770 /* TimesheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F361614DB5000A2F770 /* TimesheetViewController.xib */; };
+		78C99F3C1614DBD300A2F770 /* WeekOneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F3A1614DBD200A2F770 /* WeekOneTableViewController.m */; };
+		78C99F3D1614DBD300A2F770 /* WeekOneTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F3B1614DBD300A2F770 /* WeekOneTableViewController.xib */; };
+		78C99F451614DF8400A2F770 /* Timesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F441614DF8400A2F770 /* Timesheet.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78C99EC71613FC0800A2F770 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A03ADDBE11D14F1200F5A51F;
+			remoteInfo = ldap;
+		};
+		78C99EC91613FC0800A2F770 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A03ADE2A11D1520A00F5A51F;
+			remoteInfo = lber;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7805830E1614E2DA00751685 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
+		7805830F1614E2DA00751685 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
+		780583111614E34200751685 /* AbsenceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceType.h; sourceTree = "<group>"; };
+		780583121614E34200751685 /* AbsenceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceType.m; sourceTree = "<group>"; };
+		7805831616155AE200751685 /* ConfirmationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmationViewController.h; sourceTree = "<group>"; };
+		7805831716155AE200751685 /* ConfirmationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmationViewController.m; sourceTree = "<group>"; };
+		7805831816155AE300751685 /* ConfirmationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmationViewController.xib; sourceTree = "<group>"; };
+		780583231616B9ED00751685 /* AbsenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceViewController.h; sourceTree = "<group>"; };
+		780583241616B9F100751685 /* AbsenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceViewController.m; sourceTree = "<group>"; };
+		780583251616B9F200751685 /* AbsenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceViewController.xib; sourceTree = "<group>"; };
+		780583281616BB0600751685 /* EditAbsenceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAbsenceTableViewController.h; sourceTree = "<group>"; };
+		780583291616BB0700751685 /* EditAbsenceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditAbsenceTableViewController.m; sourceTree = "<group>"; };
+		7805832A1616BB0700751685 /* EditAbsenceTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditAbsenceTableViewController.xib; sourceTree = "<group>"; };
+		780583311617CF5800751685 /* WeekTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekTableViewDelegate.h; sourceTree = "<group>"; };
+		78C986751610FE5D00A2F770 /* Time Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Time Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C986791610FE5D00A2F770 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		78C9867B1610FE5D00A2F770 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		78C9867F1610FE5D00A2F770 /* Exempt Timesheet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Exempt Timesheet-Info.plist"; sourceTree = "<group>"; };
+		78C986811610FE5D00A2F770 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		78C986831610FE5D00A2F770 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78C986851610FE5D00A2F770 /* Exempt Timesheet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Exempt Timesheet-Prefix.pch"; sourceTree = "<group>"; };
+		78C986861610FE5D00A2F770 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		78C986871610FE5D00A2F770 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		78C986891610FE5D00A2F770 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		78C9868A1610FE5D00A2F770 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		78C9868C1610FE5D00A2F770 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		78C9868D1610FE5D00A2F770 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		78C986901610FE5D00A2F770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		78C986931610FE5D00A2F770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		78C986E01613E00A00A2F770 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		78C986E11613E00A00A2F770 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		78C986E21613E00B00A2F770 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		78C986E61613E17600A2F770 /* wcmc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wcmc_logo.png; sourceTree = "<group>"; };
+		78C986E81613EF7900A2F770 /* LDAPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDAPService.h; sourceTree = "<group>"; };
+		78C986E91613EF7900A2F770 /* LDAPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDAPService.m; sourceTree = "<group>"; };
+		78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openldap.xcodeproj; path = ../iOSPorts/ports/database/openldap/openldap.xcodeproj; sourceTree = "<group>"; };
+		78C99F101613FE6900A2F770 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
+		78C99F111613FE6900A2F770 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "../iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
+		78C99F121613FE6900A2F770 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
+		78C99F2916149DF200A2F770 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		78C99F2A16149DF200A2F770 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		78C99F2B16149DF200A2F770 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		78C99F2E1614D0E800A2F770 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		78C99F301614D0ED00A2F770 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		78C99F321614D77400A2F770 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		78C99F341614DB4F00A2F770 /* TimesheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimesheetViewController.h; sourceTree = "<group>"; };
+		78C99F351614DB4F00A2F770 /* TimesheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimesheetViewController.m; sourceTree = "<group>"; };
+		78C99F361614DB5000A2F770 /* TimesheetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimesheetViewController.xib; sourceTree = "<group>"; };
+		78C99F391614DBD200A2F770 /* WeekOneTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekOneTableViewController.h; sourceTree = "<group>"; };
+		78C99F3A1614DBD200A2F770 /* WeekOneTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekOneTableViewController.m; sourceTree = "<group>"; };
+		78C99F3B1614DBD300A2F770 /* WeekOneTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekOneTableViewController.xib; sourceTree = "<group>"; };
+		78C99F431614DF8400A2F770 /* Timesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timesheet.h; sourceTree = "<group>"; };
+		78C99F441614DF8400A2F770 /* Timesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timesheet.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78C986721610FE5D00A2F770 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C99F131613FE6900A2F770 /* libcrypto.a in Frameworks */,
+				78C99F141613FE6900A2F770 /* libsasl2.a in Frameworks */,
+				78C99F151613FE6900A2F770 /* libssl.a in Frameworks */,
+				78C99F0F1613FE6900A2F770 /* liblber.a in Frameworks */,
+				78C99F0E1613FE5800A2F770 /* libldap.a in Frameworks */,
+				78C9867A1610FE5D00A2F770 /* UIKit.framework in Frameworks */,
+				78C9867C1610FE5D00A2F770 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78C9866A1610FE5D00A2F770 = {
+			isa = PBXGroup;
+			children = (
+				78C99F321614D77400A2F770 /* Default.png */,
+				78C99F301614D0ED00A2F770 /* Icon@2x.png */,
+				78C99F2E1614D0E800A2F770 /* Icon.png */,
+				78C99F101613FE6900A2F770 /* libcrypto.a */,
+				78C99F111613FE6900A2F770 /* libsasl2.a */,
+				78C99F121613FE6900A2F770 /* libssl.a */,
+				78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */,
+				78C9867D1610FE5D00A2F770 /* Exempt Timesheet */,
+				78C986781610FE5D00A2F770 /* Frameworks */,
+				78C986761610FE5D00A2F770 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78C986761610FE5D00A2F770 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78C986751610FE5D00A2F770 /* Time Tracking.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78C986781610FE5D00A2F770 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78C986791610FE5D00A2F770 /* UIKit.framework */,
+				78C9867B1610FE5D00A2F770 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78C9867D1610FE5D00A2F770 /* Exempt Timesheet */ = {
+			isa = PBXGroup;
+			children = (
+				78C986E51613E04100A2F770 /* images */,
+				78C986861610FE5D00A2F770 /* AppDelegate.h */,
+				78C986871610FE5D00A2F770 /* AppDelegate.m */,
+				78C986E01613E00A00A2F770 /* LoginViewController.h */,
+				78C986E11613E00A00A2F770 /* LoginViewController.m */,
+				78C986E21613E00B00A2F770 /* LoginViewController.xib */,
+				78C99F2916149DF200A2F770 /* MainViewController.h */,
+				78C99F2A16149DF200A2F770 /* MainViewController.m */,
+				78C99F2B16149DF200A2F770 /* MainViewController.xib */,
+				78C99F341614DB4F00A2F770 /* TimesheetViewController.h */,
+				78C99F351614DB4F00A2F770 /* TimesheetViewController.m */,
+				78C99F361614DB5000A2F770 /* TimesheetViewController.xib */,
+				780583311617CF5800751685 /* WeekTableViewDelegate.h */,
+				78C99F391614DBD200A2F770 /* WeekOneTableViewController.h */,
+				78C99F3A1614DBD200A2F770 /* WeekOneTableViewController.m */,
+				78C99F3B1614DBD300A2F770 /* WeekOneTableViewController.xib */,
+				780583231616B9ED00751685 /* AbsenceViewController.h */,
+				780583241616B9F100751685 /* AbsenceViewController.m */,
+				780583251616B9F200751685 /* AbsenceViewController.xib */,
+				780583281616BB0600751685 /* EditAbsenceTableViewController.h */,
+				780583291616BB0700751685 /* EditAbsenceTableViewController.m */,
+				7805832A1616BB0700751685 /* EditAbsenceTableViewController.xib */,
+				7805831616155AE200751685 /* ConfirmationViewController.h */,
+				7805831716155AE200751685 /* ConfirmationViewController.m */,
+				7805831816155AE300751685 /* ConfirmationViewController.xib */,
+				78C986891610FE5D00A2F770 /* MasterViewController.h */,
+				78C9868A1610FE5D00A2F770 /* MasterViewController.m */,
+				78C9868F1610FE5D00A2F770 /* MasterViewController.xib */,
+				78C9868C1610FE5D00A2F770 /* DetailViewController.h */,
+				78C9868D1610FE5D00A2F770 /* DetailViewController.m */,
+				78C986921610FE5D00A2F770 /* DetailViewController.xib */,
+				78C99F431614DF8400A2F770 /* Timesheet.h */,
+				78C99F441614DF8400A2F770 /* Timesheet.m */,
+				7805830E1614E2DA00751685 /* Day.h */,
+				7805830F1614E2DA00751685 /* Day.m */,
+				780583111614E34200751685 /* AbsenceType.h */,
+				780583121614E34200751685 /* AbsenceType.m */,
+				78C986E81613EF7900A2F770 /* LDAPService.h */,
+				78C986E91613EF7900A2F770 /* LDAPService.m */,
+				78C9867E1610FE5D00A2F770 /* Supporting Files */,
+			);
+			path = "Exempt Timesheet";
+			sourceTree = "<group>";
+		};
+		78C9867E1610FE5D00A2F770 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78C9867F1610FE5D00A2F770 /* Exempt Timesheet-Info.plist */,
+				78C986801610FE5D00A2F770 /* InfoPlist.strings */,
+				78C986831610FE5D00A2F770 /* main.m */,
+				78C986851610FE5D00A2F770 /* Exempt Timesheet-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78C986E51613E04100A2F770 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				78C986E61613E17600A2F770 /* wcmc_logo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		78C993FC1613FBFA00A2F770 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78C99EC81613FC0800A2F770 /* libldap.a */,
+				78C99ECA1613FC0800A2F770 /* liblber.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78C986741610FE5D00A2F770 /* Exempt Timesheet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78C986971610FE5D00A2F770 /* Build configuration list for PBXNativeTarget "Exempt Timesheet" */;
+			buildPhases = (
+				78C986711610FE5D00A2F770 /* Sources */,
+				78C986721610FE5D00A2F770 /* Frameworks */,
+				78C986731610FE5D00A2F770 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Exempt Timesheet";
+			productName = "Exempt Timesheet";
+			productReference = 78C986751610FE5D00A2F770 /* Time Tracking.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78C9866C1610FE5D00A2F770 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 78C9866F1610FE5D00A2F770 /* Build configuration list for PBXProject "Exempt Timesheet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 78C9866A1610FE5D00A2F770;
+			productRefGroup = 78C986761610FE5D00A2F770 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 78C993FC1613FBFA00A2F770 /* Products */;
+					ProjectRef = 78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				78C986741610FE5D00A2F770 /* Exempt Timesheet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		78C99EC81613FC0800A2F770 /* libldap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libldap.a;
+			remoteRef = 78C99EC71613FC0800A2F770 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78C99ECA1613FC0800A2F770 /* liblber.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblber.a;
+			remoteRef = 78C99EC91613FC0800A2F770 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78C986731610FE5D00A2F770 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C986821610FE5D00A2F770 /* InfoPlist.strings in Resources */,
+				78C986911610FE5D00A2F770 /* MasterViewController.xib in Resources */,
+				78C986941610FE5D00A2F770 /* DetailViewController.xib in Resources */,
+				78C986E41613E00B00A2F770 /* LoginViewController.xib in Resources */,
+				78C986E71613E17600A2F770 /* wcmc_logo.png in Resources */,
+				78C99F2D16149DF200A2F770 /* MainViewController.xib in Resources */,
+				78C99F2F1614D0E800A2F770 /* Icon.png in Resources */,
+				78C99F311614D0ED00A2F770 /* Icon@2x.png in Resources */,
+				78C99F331614D77500A2F770 /* Default.png in Resources */,
+				78C99F381614DB5100A2F770 /* TimesheetViewController.xib in Resources */,
+				78C99F3D1614DBD300A2F770 /* WeekOneTableViewController.xib in Resources */,
+				7805831A16155AE300751685 /* ConfirmationViewController.xib in Resources */,
+				780583271616B9FC00751685 /* AbsenceViewController.xib in Resources */,
+				7805832C1616BB0A00751685 /* EditAbsenceTableViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78C986711610FE5D00A2F770 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C986841610FE5D00A2F770 /* main.m in Sources */,
+				78C986881610FE5D00A2F770 /* AppDelegate.m in Sources */,
+				78C9868B1610FE5D00A2F770 /* MasterViewController.m in Sources */,
+				78C9868E1610FE5D00A2F770 /* DetailViewController.m in Sources */,
+				78C986E31613E00B00A2F770 /* LoginViewController.m in Sources */,
+				78C986EA1613EF7900A2F770 /* LDAPService.m in Sources */,
+				78C99F2C16149DF200A2F770 /* MainViewController.m in Sources */,
+				78C99F371614DB5000A2F770 /* TimesheetViewController.m in Sources */,
+				78C99F3C1614DBD300A2F770 /* WeekOneTableViewController.m in Sources */,
+				78C99F451614DF8400A2F770 /* Timesheet.m in Sources */,
+				780583101614E2DA00751685 /* Day.m in Sources */,
+				780583131614E34200751685 /* AbsenceType.m in Sources */,
+				7805831916155AE300751685 /* ConfirmationViewController.m in Sources */,
+				780583261616B9FC00751685 /* AbsenceViewController.m in Sources */,
+				7805832B1616BB0A00751685 /* EditAbsenceTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		78C986801610FE5D00A2F770 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78C986811610FE5D00A2F770 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		78C9868F1610FE5D00A2F770 /* MasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78C986901610FE5D00A2F770 /* en */,
+			);
+			name = MasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		78C986921610FE5D00A2F770 /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78C986931610FE5D00A2F770 /* en */,
+			);
+			name = DetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78C986951610FE5D00A2F770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		78C986961610FE5D00A2F770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78C986981610FE5D00A2F770 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Exempt Timesheet/Exempt Timesheet-Prefix.pch";
+				INFOPLIST_FILE = "Exempt Timesheet/Exempt Timesheet-Info.plist";
+				PRODUCT_NAME = "Time Tracking";
+				USER_HEADER_SEARCH_PATHS = ../iOSPorts/include;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		78C986991610FE5D00A2F770 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Exempt Timesheet/Exempt Timesheet-Prefix.pch";
+				INFOPLIST_FILE = "Exempt Timesheet/Exempt Timesheet-Info.plist";
+				PRODUCT_NAME = "Time Tracking";
+				USER_HEADER_SEARCH_PATHS = ../iOSPorts/include;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78C9866F1610FE5D00A2F770 /* Build configuration list for PBXProject "Exempt Timesheet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C986951610FE5D00A2F770 /* Debug */,
+				78C986961610FE5D00A2F770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78C986971610FE5D00A2F770 /* Build configuration list for PBXNativeTarget "Exempt Timesheet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C986981610FE5D00A2F770 /* Debug */,
+				78C986991610FE5D00A2F770 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78C9866C1610FE5D00A2F770 /* Project object */;
+}
