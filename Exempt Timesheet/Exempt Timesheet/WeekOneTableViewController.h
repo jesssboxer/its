@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeekTableViewDelegate.h"
 
-@class AbsenceViewController;
 
-@interface WeekOneTableViewController : UITableViewController {
+@interface WeekOneTableViewController : UITableViewController<UITableViewDataSource> {
     NSArray *days;
+    id<WeekTableViewDelegate> delegate;
 }
+@property (nonatomic, assign) id<WeekTableViewDelegate> delegate;
 
 @property (nonatomic, retain) NSArray *days;
-@property (strong, nonatomic) AbsenceViewController *detailViewController;
 
 @end

@@ -30,7 +30,6 @@
 		78C986EA1613EF7900A2F770 /* LDAPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E91613EF7900A2F770 /* LDAPService.m */; };
 		78C99F0E1613FE5800A2F770 /* libldap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99EC81613FC0800A2F770 /* libldap.a */; };
 		78C99F0F1613FE6900A2F770 /* liblber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99ECA1613FC0800A2F770 /* liblber.a */; };
-		78C99F131613FE6900A2F770 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F101613FE6900A2F770 /* libcrypto.a */; };
 		78C99F141613FE6900A2F770 /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F111613FE6900A2F770 /* libsasl2.a */; };
 		78C99F151613FE6900A2F770 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F121613FE6900A2F770 /* libssl.a */; };
 		78C99F2C16149DF200A2F770 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F2A16149DF200A2F770 /* MainViewController.m */; };
@@ -43,6 +42,9 @@
 		78C99F3C1614DBD300A2F770 /* WeekOneTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F3A1614DBD200A2F770 /* WeekOneTableViewController.m */; };
 		78C99F3D1614DBD300A2F770 /* WeekOneTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F3B1614DBD300A2F770 /* WeekOneTableViewController.xib */; };
 		78C99F451614DF8400A2F770 /* Timesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F441614DF8400A2F770 /* Timesheet.m */; };
+		F6A7C6E8161951AA006BC440 /* AbsenceTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A7C6E6161951AA006BC440 /* AbsenceTypeTableViewController.m */; };
+		F6A7C6E9161951AA006BC440 /* AbsenceTypeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C6E7161951AA006BC440 /* AbsenceTypeTableViewController.xib */; };
+		F6A7C71616196626006BC440 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A7C71516196626006BC440 /* libcrypto.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +101,6 @@
 		78C986E81613EF7900A2F770 /* LDAPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDAPService.h; sourceTree = "<group>"; };
 		78C986E91613EF7900A2F770 /* LDAPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDAPService.m; sourceTree = "<group>"; };
 		78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openldap.xcodeproj; path = ../iOSPorts/ports/database/openldap/openldap.xcodeproj; sourceTree = "<group>"; };
-		78C99F101613FE6900A2F770 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
 		78C99F111613FE6900A2F770 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "../iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
 		78C99F121613FE6900A2F770 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
 		78C99F2916149DF200A2F770 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -116,6 +117,12 @@
 		78C99F3B1614DBD300A2F770 /* WeekOneTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekOneTableViewController.xib; sourceTree = "<group>"; };
 		78C99F431614DF8400A2F770 /* Timesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timesheet.h; sourceTree = "<group>"; };
 		78C99F441614DF8400A2F770 /* Timesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timesheet.m; sourceTree = "<group>"; };
+		F6A7C6E5161951AA006BC440 /* AbsenceTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceTypeTableViewController.h; sourceTree = "<group>"; };
+		F6A7C6E6161951AA006BC440 /* AbsenceTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceTypeTableViewController.m; sourceTree = "<group>"; };
+		F6A7C6E7161951AA006BC440 /* AbsenceTypeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceTypeTableViewController.xib; sourceTree = "<group>"; };
+		F6A7C6EB16195486006BC440 /* AbsenceTypeTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceTypeTableDelegate.h; sourceTree = "<group>"; };
+		F6A7C6EC16195727006BC440 /* EditAbsenceTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAbsenceTableDelegate.h; sourceTree = "<group>"; };
+		F6A7C71516196626006BC440 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libcrypto.a; path = "../iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78C99F131613FE6900A2F770 /* libcrypto.a in Frameworks */,
+				F6A7C71616196626006BC440 /* libcrypto.a in Frameworks */,
 				78C99F141613FE6900A2F770 /* libsasl2.a in Frameworks */,
 				78C99F151613FE6900A2F770 /* libssl.a in Frameworks */,
 				78C99F0F1613FE6900A2F770 /* liblber.a in Frameworks */,
@@ -139,10 +146,10 @@
 		78C9866A1610FE5D00A2F770 = {
 			isa = PBXGroup;
 			children = (
+				F6A7C71516196626006BC440 /* libcrypto.a */,
 				78C99F321614D77400A2F770 /* Default.png */,
 				78C99F301614D0ED00A2F770 /* Icon@2x.png */,
 				78C99F2E1614D0E800A2F770 /* Icon.png */,
-				78C99F101613FE6900A2F770 /* libcrypto.a */,
 				78C99F111613FE6900A2F770 /* libsasl2.a */,
 				78C99F121613FE6900A2F770 /* libssl.a */,
 				78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */,
@@ -191,9 +198,14 @@
 				780583231616B9ED00751685 /* AbsenceViewController.h */,
 				780583241616B9F100751685 /* AbsenceViewController.m */,
 				780583251616B9F200751685 /* AbsenceViewController.xib */,
+				F6A7C6EC16195727006BC440 /* EditAbsenceTableDelegate.h */,
 				780583281616BB0600751685 /* EditAbsenceTableViewController.h */,
 				780583291616BB0700751685 /* EditAbsenceTableViewController.m */,
 				7805832A1616BB0700751685 /* EditAbsenceTableViewController.xib */,
+				F6A7C6EB16195486006BC440 /* AbsenceTypeTableDelegate.h */,
+				F6A7C6E5161951AA006BC440 /* AbsenceTypeTableViewController.h */,
+				F6A7C6E6161951AA006BC440 /* AbsenceTypeTableViewController.m */,
+				F6A7C6E7161951AA006BC440 /* AbsenceTypeTableViewController.xib */,
 				7805831616155AE200751685 /* ConfirmationViewController.h */,
 				7805831716155AE200751685 /* ConfirmationViewController.m */,
 				7805831816155AE300751685 /* ConfirmationViewController.xib */,
@@ -331,6 +343,7 @@
 				7805831A16155AE300751685 /* ConfirmationViewController.xib in Resources */,
 				780583271616B9FC00751685 /* AbsenceViewController.xib in Resources */,
 				7805832C1616BB0A00751685 /* EditAbsenceTableViewController.xib in Resources */,
+				F6A7C6E9161951AA006BC440 /* AbsenceTypeTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +369,7 @@
 				7805831916155AE300751685 /* ConfirmationViewController.m in Sources */,
 				780583261616B9FC00751685 /* AbsenceViewController.m in Sources */,
 				7805832B1616BB0A00751685 /* EditAbsenceTableViewController.m in Sources */,
+				F6A7C6E8161951AA006BC440 /* AbsenceTypeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

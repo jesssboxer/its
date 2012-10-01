@@ -19,6 +19,8 @@
 @synthesize weekSwitch;
 @synthesize payPeriodLabel;
 
+@synthesize detailViewController = _detailViewController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,6 +34,7 @@
         }
         week1Controller.tableView.frame = CGRectMake(20, 50+29, week1Controller.tableView.frame.size.width, self.week1Controller.tableView.frame.size.height);
         week1Controller.days = timesheet.week1;
+        week1Controller.delegate = self;
         [self.view addSubview:week1Controller.tableView];
         
         
@@ -41,6 +44,7 @@
         }
         week2Controller.tableView.frame = CGRectMake(20, 150+29, week2Controller.tableView.frame.size.width, self.week2Controller.tableView.frame.size.height);        
         week2Controller.days = timesheet.week2;
+        week2Controller.delegate = self;
         [self.view addSubview:week2Controller.tableView];
         
         
@@ -218,6 +222,19 @@
         [self.navigationController pushViewController:m animated:YES];
 	} 
     
+}
+
+#pragma mark WeekTableViewDelegate
+
+
+- (void)didSelectWeek:(Day *)d {
+    // i think i have to make the parent push the view
+     if (!self.detailViewController) {
+     self.detailViewController = [[AbsenceViewController alloc] initWithNibName:@"AbsenceViewController" bundle:nil];
+     }
+     self.detailViewController.d = d;
+     [self.navigationController pushViewController:self.detailViewController animated:YES];
+     
 }
 
 @end

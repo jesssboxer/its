@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Day.h"
 
 @protocol WeekTableViewDelegate <NSObject>
+
+- (void)didSelectWeek:(Day *)d;
 
 @end

@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Day.h"
+#import "EditAbsenceTableDelegate.h"
 
 @interface EditAbsenceTableViewController : UITableViewController {
     Day *d;
+    id<EditAbsenceTableDelegate> delegate;
 }
+@property (nonatomic, assign) id<EditAbsenceTableDelegate> delegate;
 
 @property (nonatomic, retain) Day *d;
 

@@ -8,12 +8,11 @@
 
 #import "WeekOneTableViewController.h"
 #import "Day.h"
-#import "AbsenceViewController.h"
 
 @implementation WeekOneTableViewController
 
 @synthesize days;
-@synthesize detailViewController;
+@synthesize delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -157,12 +156,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // i think i have to make the parent push the view
-    if (!detailViewController) {
-        detailViewController = [[AbsenceViewController alloc] initWithNibName:@"AbsenceViewController" bundle:nil];
-    }
-    detailViewController.d = [days objectAtIndex:indexPath.row];
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.delegate didSelectWeek:[days objectAtIndex:indexPath.row]];
 }
 
 @end

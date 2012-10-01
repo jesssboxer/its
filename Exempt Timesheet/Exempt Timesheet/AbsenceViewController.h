@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Day.h"
+#import "EditAbsenceTableDelegate.h"
+#import "AbsenceTypeTableDelegate.h"
 
 @class EditAbsenceTableViewController;
 
-@interface AbsenceViewController : UIViewController {
+@interface AbsenceViewController : UIViewController<EditAbsenceTableDelegate, AbsenceTypeTableDelegate> {
     Day *d;
 }
 
@@ -19,4 +21,5 @@
 
 @property (strong, nonatomic) EditAbsenceTableViewController *detailViewController;
 
+-(void)saveHours:(id)sender;
 @end

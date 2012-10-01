@@ -67,7 +67,8 @@
 -(IBAction)login:(id)sender {
     NSLog(@"login!");
     LDAPService *ls = [LDAPService alloc];
-    BOOL wasSuccessful = [ls simple_ldap:cwid.text bindPW:passwd.text];
+    //BOOL wasSuccessful = [ls simple_ldap:cwid.text bindPW:passwd.text];
+    BOOL wasSuccessful = YES; // TESTING, uncomment above when done testing!!!!!
     
     if (wasSuccessful) {
         //NSLog(@"YAY login successful!");

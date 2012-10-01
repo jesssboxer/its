@@ -11,6 +11,7 @@
 @implementation EditAbsenceTableViewController
 
 @synthesize d;
+@synthesize delegate = _delegate;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -35,10 +36,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
@@ -105,27 +106,28 @@
     
     // always make the first section the blank one
     int whichSection = indexPath.section;
-    if (whichSection == 1) {
+    if (whichSection == 0) {
         if (indexPath.row == 0) { // first section
             // day
-            cell.textLabel.text = [NSString stringWithFormat:@"Day: ", d.dayName];
+            cell.textLabel.text = [NSString stringWithFormat:@"Day: %@", d.dayName];
+            [cell setUserInteractionEnabled:NO]; // make the cell untouchable
         } else if (indexPath.row == 1) {
             // type
+            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
             cell.textLabel.text = @"Type";
         } else {
             // hours
             cell.textLabel.text = @"Hours";
-            
-            UITextField *hoursTextField = [[UITextField alloc] initWithFrame:CGRectMake(110, 10, 185, 30)];
+            UITextField *hoursTextField = [[UITextField alloc] initWithFrame:CGRectMake(85, 10, 200, 30)];
             hoursTextField.adjustsFontSizeToFitWidth = YES;
             hoursTextField.textColor = [UIColor blackColor];
             hoursTextField.keyboardType = UIKeyboardTypeNumberPad;
-            hoursTextField.returnKeyType = UIReturnKeyNext;
             hoursTextField.backgroundColor = [UIColor whiteColor];
             hoursTextField.autocorrectionType = UITextAutocorrectionTypeNo; // no auto correction support
             hoursTextField.textAlignment = UITextAlignmentLeft;
             hoursTextField.clearButtonMode = UITextFieldViewModeUnlessEditing; // no clear 'x' button to the right
             [hoursTextField setEnabled: YES];
+            hoursTextField.placeholder = @"number of hours";
             [cell addSubview:hoursTextField];
         }
     } else if (whichSection % 2 == 0) { // even section
@@ -155,43 +157,43 @@
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ }
+ else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 #pragma mark - Table view delegate
 
@@ -204,6 +206,12 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+
+    if (indexPath.row == 1) {
+        NSLog(@"change absence type?");
+        [self.delegate didSelectToEditAbsenceType];
+    }
+
 }
 
 @end
