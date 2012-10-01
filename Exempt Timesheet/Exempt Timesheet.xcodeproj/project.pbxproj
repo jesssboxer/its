@@ -28,10 +28,6 @@
 		78C986E41613E00B00A2F770 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C986E21613E00B00A2F770 /* LoginViewController.xib */; };
 		78C986E71613E17600A2F770 /* wcmc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C986E61613E17600A2F770 /* wcmc_logo.png */; };
 		78C986EA1613EF7900A2F770 /* LDAPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E91613EF7900A2F770 /* LDAPService.m */; };
-		78C99F0E1613FE5800A2F770 /* libldap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99EC81613FC0800A2F770 /* libldap.a */; };
-		78C99F0F1613FE6900A2F770 /* liblber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99ECA1613FC0800A2F770 /* liblber.a */; };
-		78C99F141613FE6900A2F770 /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F111613FE6900A2F770 /* libsasl2.a */; };
-		78C99F151613FE6900A2F770 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C99F121613FE6900A2F770 /* libssl.a */; };
 		78C99F2C16149DF200A2F770 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F2A16149DF200A2F770 /* MainViewController.m */; };
 		78C99F2D16149DF200A2F770 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F2B16149DF200A2F770 /* MainViewController.xib */; };
 		78C99F2F1614D0E800A2F770 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F2E1614D0E800A2F770 /* Icon.png */; };
@@ -44,25 +40,7 @@
 		78C99F451614DF8400A2F770 /* Timesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F441614DF8400A2F770 /* Timesheet.m */; };
 		F6A7C6E8161951AA006BC440 /* AbsenceTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A7C6E6161951AA006BC440 /* AbsenceTypeTableViewController.m */; };
 		F6A7C6E9161951AA006BC440 /* AbsenceTypeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C6E7161951AA006BC440 /* AbsenceTypeTableViewController.xib */; };
-		F6A7C71616196626006BC440 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6A7C71516196626006BC440 /* libcrypto.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		78C99EC71613FC0800A2F770 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03ADDBE11D14F1200F5A51F;
-			remoteInfo = ldap;
-		};
-		78C99EC91613FC0800A2F770 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = A03ADE2A11D1520A00F5A51F;
-			remoteInfo = lber;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7805830E1614E2DA00751685 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
@@ -100,9 +78,6 @@
 		78C986E61613E17600A2F770 /* wcmc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wcmc_logo.png; sourceTree = "<group>"; };
 		78C986E81613EF7900A2F770 /* LDAPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDAPService.h; sourceTree = "<group>"; };
 		78C986E91613EF7900A2F770 /* LDAPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDAPService.m; sourceTree = "<group>"; };
-		78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openldap.xcodeproj; path = ../iOSPorts/ports/database/openldap/openldap.xcodeproj; sourceTree = "<group>"; };
-		78C99F111613FE6900A2F770 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "../iOSPorts/ports/security/cyrus-sasl/build/Release-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
-		78C99F121613FE6900A2F770 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../iOSPorts/ports/security/openssl/build/Release-iphoneos/libssl.a"; sourceTree = "<group>"; };
 		78C99F2916149DF200A2F770 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		78C99F2A16149DF200A2F770 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		78C99F2B16149DF200A2F770 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
@@ -122,7 +97,6 @@
 		F6A7C6E7161951AA006BC440 /* AbsenceTypeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceTypeTableViewController.xib; sourceTree = "<group>"; };
 		F6A7C6EB16195486006BC440 /* AbsenceTypeTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceTypeTableDelegate.h; sourceTree = "<group>"; };
 		F6A7C6EC16195727006BC440 /* EditAbsenceTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAbsenceTableDelegate.h; sourceTree = "<group>"; };
-		F6A7C71516196626006BC440 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libcrypto.a; path = "../iOSPorts/ports/security/openssl/build/Release-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,11 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6A7C71616196626006BC440 /* libcrypto.a in Frameworks */,
-				78C99F141613FE6900A2F770 /* libsasl2.a in Frameworks */,
-				78C99F151613FE6900A2F770 /* libssl.a in Frameworks */,
-				78C99F0F1613FE6900A2F770 /* liblber.a in Frameworks */,
-				78C99F0E1613FE5800A2F770 /* libldap.a in Frameworks */,
 				78C9867A1610FE5D00A2F770 /* UIKit.framework in Frameworks */,
 				78C9867C1610FE5D00A2F770 /* Foundation.framework in Frameworks */,
 			);
@@ -146,13 +115,9 @@
 		78C9866A1610FE5D00A2F770 = {
 			isa = PBXGroup;
 			children = (
-				F6A7C71516196626006BC440 /* libcrypto.a */,
 				78C99F321614D77400A2F770 /* Default.png */,
 				78C99F301614D0ED00A2F770 /* Icon@2x.png */,
 				78C99F2E1614D0E800A2F770 /* Icon.png */,
-				78C99F111613FE6900A2F770 /* libsasl2.a */,
-				78C99F121613FE6900A2F770 /* libssl.a */,
-				78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */,
 				78C9867D1610FE5D00A2F770 /* Exempt Timesheet */,
 				78C986781610FE5D00A2F770 /* Frameworks */,
 				78C986761610FE5D00A2F770 /* Products */,
@@ -247,15 +212,6 @@
 			name = images;
 			sourceTree = "<group>";
 		};
-		78C993FC1613FBFA00A2F770 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				78C99EC81613FC0800A2F770 /* libldap.a */,
-				78C99ECA1613FC0800A2F770 /* liblber.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -294,35 +250,12 @@
 			mainGroup = 78C9866A1610FE5D00A2F770;
 			productRefGroup = 78C986761610FE5D00A2F770 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 78C993FC1613FBFA00A2F770 /* Products */;
-					ProjectRef = 78C993FB1613FBFA00A2F770 /* openldap.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				78C986741610FE5D00A2F770 /* Exempt Timesheet */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		78C99EC81613FC0800A2F770 /* libldap.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libldap.a;
-			remoteRef = 78C99EC71613FC0800A2F770 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		78C99ECA1613FC0800A2F770 /* liblber.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = liblber.a;
-			remoteRef = 78C99EC91613FC0800A2F770 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		78C986731610FE5D00A2F770 /* Resources */ = {

@@ -9,7 +9,7 @@
 #import "LDAPService.h"
 
 @implementation LDAPService
-
+/*
 -(BOOL)simple_ldap:(NSString *)uid bindPW:(NSString *)bindPW {
     BOOL success = NO;
     
@@ -71,4 +71,6 @@
     }
     return success;
 }
+ */
+
 @end
