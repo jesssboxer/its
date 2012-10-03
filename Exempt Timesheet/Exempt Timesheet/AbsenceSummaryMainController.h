@@ -17,6 +17,7 @@
     NSString *payPeriodLabel;
     id<AbsenceSummaryDelegate> delegate;
     AbsenceSummaryViewController *absenceSummaryViewController;
+    BOOL isReadOnly;
 }
 
 @property (nonatomic, assign) id<AbsenceSummaryDelegate> delegate;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSArray *week2;
 @property (nonatomic, retain) NSString *payPeriodLabel;
 @property float hoursWorked;
+@property BOOL isReadOnly;
 
 -(void)confirmHours:(id)sender;
 

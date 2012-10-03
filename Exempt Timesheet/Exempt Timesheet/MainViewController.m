@@ -14,6 +14,7 @@
 
 @synthesize masterViewController = _masterViewController;
 @synthesize currentPayPeriodLabel;
+@synthesize detailViewController = _detailViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +49,7 @@
         self.masterViewController = [[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil];
     }
     self.masterViewController.tableView.frame = CGRectMake(20, 150, self.masterViewController.tableView.frame.size.width, self.masterViewController.tableView.frame.size.height);
+    self.masterViewController.delegate = self;
     
     [self.view addSubview:self.masterViewController.tableView];
 }
@@ -80,6 +82,21 @@
     TimesheetViewController *m = [[TimesheetViewController alloc] initWithNibName:@"TimesheetViewController" bundle:nil];
     m.payPeriodLabel.text = [NSString stringWithFormat:@"Pay Period: %@", currentPayPeriodLabel.text];
     [self.navigationController pushViewController:m animated:YES];
+}
+
+#pragma mark MasterViewDelegate
+-(void) didSelectTimesheetToView:(Timesheet *)t {
+    if (!self.detailViewController) {
+        self.detailViewController = [[AbsenceSummaryMainController alloc] initWithNibName:@"AbsenceSummaryMainController" bundle:nil];
+    }
+    self.detailViewController.week1 = t.week1;
+    self.detailViewController.week2 = t.week2;
+    
+    self.detailViewController.payPeriodLabel = t.payPeriodStr;
+    //self.detailViewController.hoursWorked = [self calculateHours];
+    self.detailViewController.isReadOnly = YES;
+    
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 @end

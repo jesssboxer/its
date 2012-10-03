@@ -156,6 +156,7 @@
     NSString *payPeriodStr = [payPeriodLabel.text substringFromIndex:range.location+1];
     absenceSummaryController.payPeriodLabel = payPeriodStr;
     absenceSummaryController.hoursWorked = [self calculateHours];
+    absenceSummaryController.isReadOnly = NO;
     absenceSummaryController.delegate = self;    
     
     [self.navigationController pushViewController:absenceSummaryController animated:YES];

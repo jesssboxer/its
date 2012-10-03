@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class DetailViewController;
+#import "MasterViewDelegate.h"
 
 @interface MasterViewController : UITableViewController {
     NSArray *savedTimesheets;
+    
+    id<MasterViewDelegate> delegate;
 }
+@property (nonatomic, assign) id<MasterViewDelegate> delegate;
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSArray *savedTimesheets;
 
 -(void)loadSavedTimesheets;

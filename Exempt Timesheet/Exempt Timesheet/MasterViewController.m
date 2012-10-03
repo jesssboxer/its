@@ -8,13 +8,15 @@
 
 #import "MasterViewController.h"
 
-#import "DetailViewController.h"
+#import "AbsenceSummaryMainController.h"
 #import "Timesheet.h"
+#import "Day.h"
+#import "AbsenceType.h"
 
 @implementation MasterViewController
 
-@synthesize detailViewController = _detailViewController;
 @synthesize savedTimesheets;
+@synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,12 +48,56 @@
             Timesheet *t = [[Timesheet alloc] initTimesheet];
             t.payPeriodStr = [td objectForKey:@"pay period"];
             t.submittedStr = [td objectForKey:@"submitted"];
-            // TODO - absences for week1 and 2
+            // absences for week1 and 2
+            NSDictionary *week1Dict = [td objectForKey:@"week 1"];
+            NSArray *keys = [week1Dict allKeys];
+            NSMutableArray *week1 = [[NSMutableArray alloc] init];
+            for (int i=0; i<keys.count; i++) {
+                NSString *dayName = [keys objectAtIndex:i];
+                Day *d = [[Day alloc] initWithDayName:dayName];
+                NSMutableArray *absences = [[NSMutableArray alloc] init];
+                NSDictionary *absenceDict = [week1Dict objectForKey:dayName];
+                NSArray *absenceKeys = [absenceDict allKeys];
+                for (int k=0; k<absenceKeys.count; k++) {
+                    NSString *aKey = [absenceKeys objectAtIndex:k];
+                    NSString *absenceVals = [absenceDict objectForKey: aKey];
+                    AbsenceType *at = [[AbsenceType alloc] init];
+                    at.absenceName = aKey;
+                    NSString *hoursStr = absenceVals;
+                    at.hours = [hoursStr floatValue];
+                    [absences addObject:at];
+                }
+                d.absences = absences;
+                [week1 addObject:d];
+            }
+            NSDictionary *week2Dict = [td objectForKey:@"week 2"];
+            NSArray *keys2 = [week2Dict allKeys];
+            NSMutableArray *week2 = [[NSMutableArray alloc] init];
+            for (int i=0; i<keys2.count; i++) {
+                NSString *dayName = [keys2 objectAtIndex:i];
+                Day *d = [[Day alloc] initWithDayName:dayName];
+                NSMutableArray *absences = [[NSMutableArray alloc] init];
+                NSDictionary *absenceDict = [week2Dict objectForKey:dayName];
+                NSArray *absenceKeys = [absenceDict allKeys];
+                for (int k=0; k<absenceKeys.count; k++) {
+                    NSString *aKey = [absenceKeys objectAtIndex:k];
+                    NSString *absenceVals = [absenceDict objectForKey: aKey];
+                    AbsenceType *at = [[AbsenceType alloc] init];
+                    at.absenceName = aKey;
+                    NSString *hoursStr = absenceVals;
+                    at.hours = [hoursStr floatValue];
+                    [absences addObject:at];
+                }
+                d.absences = absences;
+                [week2 addObject:d];
+            }
+            t.week1 = week1;
+            t.week2 = week2;
             [parsedTimesheets addObject:t];
         }
     }
-
-    savedTimesheets = parsedTimesheets;
+    
+    savedTimesheets = [[parsedTimesheets reverseObjectEnumerator] allObjects];;
 }
 
 #pragma mark - View lifecycle
@@ -169,10 +215,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.detailViewController) {
-        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    }
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    Timesheet *t = savedTimesheets[indexPath.row];
+    [self.delegate didSelectTimesheetToView:t];
 }
 
 @end

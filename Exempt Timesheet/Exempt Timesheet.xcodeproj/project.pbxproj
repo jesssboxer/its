@@ -113,6 +113,7 @@
 		F6A7C745161BB784006BC440 /* AbsenceSummaryMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceSummaryMainController.h; sourceTree = "<group>"; };
 		F6A7C746161BB785006BC440 /* AbsenceSummaryMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceSummaryMainController.m; sourceTree = "<group>"; };
 		F6A7C747161BB785006BC440 /* AbsenceSummaryMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceSummaryMainController.xib; sourceTree = "<group>"; };
+		F6A7C788161BF28F006BC440 /* MasterViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +201,7 @@
 				7805831616155AE200751685 /* ConfirmationViewController.h */,
 				7805831716155AE200751685 /* ConfirmationViewController.m */,
 				7805831816155AE300751685 /* ConfirmationViewController.xib */,
+				F6A7C788161BF28F006BC440 /* MasterViewDelegate.h */,
 				78C986891610FE5D00A2F770 /* MasterViewController.h */,
 				78C9868A1610FE5D00A2F770 /* MasterViewController.m */,
 				78C9868F1610FE5D00A2F770 /* MasterViewController.xib */,

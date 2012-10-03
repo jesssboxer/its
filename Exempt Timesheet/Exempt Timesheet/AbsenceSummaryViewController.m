@@ -40,45 +40,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    // setup absences array
-    if (absences == nil) {
-        absences = [[NSMutableArray alloc] init];
-    }
-    
-    // week 1
-    for (int i=0; i<week1.count; i++) {
-        Day *d = [week1 objectAtIndex:i];
-        if (d.absences != nil) {
-            for (int j=0; j<d.absences.count; j++) {
-                NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                NSString *dayStr = [NSString stringWithFormat:@"Week 1: %@", d.dayName];
-                AbsenceType *at = [d.absences objectAtIndex:j];
-                [dict setObject:at forKey:@"absence"];
-                [dict setObject:dayStr forKey:@"day"];
-                [absences addObject:dict];
-            }
-        }
-    }
-    
-    // week 2
-    for (int i=0; i<week2.count; i++) {
-        Day *d = [week2 objectAtIndex:i];
-        if (d.absences != nil) {
-            for (int j=0; j<d.absences.count; j++) {
-                NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-                NSString *dayStr = [NSString stringWithFormat:@"Week 2: %@", d.dayName];
-                AbsenceType *at = [d.absences objectAtIndex:j];
-                [dict setObject:at forKey:@"absence"];
-                [dict setObject:dayStr forKey:@"day"];
-                [absences addObject:dict];
-            }
-        }
-    }
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
 }
 
 - (void)didReceiveMemoryWarning

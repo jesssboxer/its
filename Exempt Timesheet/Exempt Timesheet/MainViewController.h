@@ -7,15 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MasterViewDelegate.h"
 
 @class MasterViewController;
+@class AbsenceSummaryMainController;
 
-@interface MainViewController : UIViewController {
+@interface MainViewController : UIViewController<MasterViewDelegate> {
     IBOutlet UILabel *currentPayPeriodLabel;
 }
 
 @property (strong, nonatomic) MasterViewController *masterViewController;
 @property (strong, nonatomic) IBOutlet UILabel *currentPayPeriodLabel;
+
+@property (strong, nonatomic) AbsenceSummaryMainController *detailViewController;
 
 -(IBAction)editTimesheet:(id)sender;
 
