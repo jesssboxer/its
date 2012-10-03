@@ -8,11 +8,13 @@
 
 #import "WeekOneTableViewController.h"
 #import "Day.h"
+#import "AbsenceType.h"
 
 @implementation WeekOneTableViewController
 
 @synthesize days;
 @synthesize delegate = _delegate;
+@synthesize week1Or2 = _week1Or2;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -105,9 +107,19 @@
     Day *d = [days objectAtIndex:indexPath.row];
     [cell.textLabel setText:d.dayName];
     if ([d.dayName isEqualToString:@"Saturday"] || [d.dayName isEqualToString:@"Sunday"]) {
-        [cell.detailTextLabel setText:@"No hours recorded"];
+        if (d.absences != nil) {
+            AbsenceType *at = [d.absences objectAtIndex:0];
+            [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %.02f hours", at.absenceName, at.hours]];
+        } else {
+            [cell.detailTextLabel setText:@"No hours recorded"];
+        }
     } else {
-        [cell.detailTextLabel setText:@"Regular: 7 hours"];
+        if (d.absences != nil) {
+            AbsenceType *at = [d.absences objectAtIndex:0];
+            [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@: %.02f hours", at.absenceName, at.hours]];
+        } else {
+            [cell.detailTextLabel setText:@"Regular: 7 hours"];
+        }
     }
     
     return cell;
@@ -156,7 +168,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.delegate didSelectWeek:[days objectAtIndex:indexPath.row]];
+    [self.delegate didSelectWeek:[days objectAtIndex:indexPath.row] whichWeek:self.week1Or2];
+}
+
+
+-(void)updateDay:(Day *)day {
+    // replace the appropriate day
+    if ([day.dayName isEqualToString:@"Sunday"]) {
+        [days replaceObjectAtIndex:0 withObject:day];
+    } else if ([day.dayName isEqualToString:@"Monday"]) {
+        [days replaceObjectAtIndex:1 withObject:day];
+    } else if ([day.dayName isEqualToString:@"Tuesday"]) {
+        [days replaceObjectAtIndex:2 withObject:day];
+    } else if ([day.dayName isEqualToString:@"Wednesday"]) {
+        [days replaceObjectAtIndex:3 withObject:day];
+    } else if ([day.dayName isEqualToString:@"Thursday"]) {
+        [days replaceObjectAtIndex:4 withObject:day];
+    } else if ([day.dayName isEqualToString:@"Friday"]) {
+        [days replaceObjectAtIndex:5 withObject:day];
+    } else if ([day.dayName isEqualToString:@"Saturday"]) {
+        [days replaceObjectAtIndex:6 withObject:day];
+    }
+    [self.tableView reloadData];
 }
 
 @end

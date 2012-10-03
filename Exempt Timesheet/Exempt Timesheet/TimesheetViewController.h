@@ -11,13 +11,17 @@
 #import "WeekOneTableViewController.h"
 #import "WeekTableViewDelegate.h"
 #import "AbsenceViewController.h"
+#import "AbsenceViewControllerDelegate.h"
+#import "AbsenceSummaryDelegate.h"
+#import "AbsenceSummaryMainController.h"
 
 @class AbsenceTableViewController;
 
-@interface TimesheetViewController : UIViewController<UIAlertViewDelegate, WeekTableViewDelegate> {
+@interface TimesheetViewController : UIViewController<UIAlertViewDelegate, WeekTableViewDelegate, AbsenceViewControllerDelegate, AbsenceSummaryDelegate> {
     Timesheet *timesheet;
     WeekOneTableViewController *week1Controller;
     WeekOneTableViewController *week2Controller;
+    AbsenceSummaryMainController *absenceSummaryController;
     IBOutlet UISegmentedControl *weekSwitch;
     IBOutlet UILabel *payPeriodLabel;
 }
@@ -25,12 +29,13 @@
 @property (nonatomic, retain) Timesheet *timesheet;
 @property (nonatomic, retain) WeekOneTableViewController *week1Controller;
 @property (nonatomic, retain) WeekOneTableViewController *week2Controller;
+@property (nonatomic, retain) AbsenceSummaryMainController *absenceSummaryController;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *weekSwitch;
 @property (nonatomic, retain) IBOutlet UILabel *payPeriodLabel;
 
 @property (strong, nonatomic) AbsenceViewController *detailViewController;
 
 -(IBAction)switchWeek:(id)sender;
--(void)confirm:(id)sender;
+-(void)confirmHours:(id)sender;
 
 @end

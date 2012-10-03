@@ -26,7 +26,6 @@
 		78C986941610FE5D00A2F770 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C986921610FE5D00A2F770 /* DetailViewController.xib */; };
 		78C986E31613E00B00A2F770 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E11613E00A00A2F770 /* LoginViewController.m */; };
 		78C986E41613E00B00A2F770 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C986E21613E00B00A2F770 /* LoginViewController.xib */; };
-		78C986E71613E17600A2F770 /* wcmc_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C986E61613E17600A2F770 /* wcmc_logo.png */; };
 		78C986EA1613EF7900A2F770 /* LDAPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E91613EF7900A2F770 /* LDAPService.m */; };
 		78C99F2C16149DF200A2F770 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F2A16149DF200A2F770 /* MainViewController.m */; };
 		78C99F2D16149DF200A2F770 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C99F2B16149DF200A2F770 /* MainViewController.xib */; };
@@ -40,6 +39,13 @@
 		78C99F451614DF8400A2F770 /* Timesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C99F441614DF8400A2F770 /* Timesheet.m */; };
 		F6A7C6E8161951AA006BC440 /* AbsenceTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A7C6E6161951AA006BC440 /* AbsenceTypeTableViewController.m */; };
 		F6A7C6E9161951AA006BC440 /* AbsenceTypeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C6E7161951AA006BC440 /* AbsenceTypeTableViewController.xib */; };
+		F6A7C73A161B4D69006BC440 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C739161B4D69006BC440 /* Default@2x.png */; };
+		F6A7C73C161B4D76006BC440 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C73B161B4D76006BC440 /* Default-568h@2x.png */; };
+		F6A7C73E161B4DA3006BC440 /* MEDICAL-COLLEGE-BLACK.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C73D161B4DA3006BC440 /* MEDICAL-COLLEGE-BLACK.png */; };
+		F6A7C742161B51CC006BC440 /* AbsenceSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A7C740161B51CB006BC440 /* AbsenceSummaryViewController.m */; };
+		F6A7C743161B51CC006BC440 /* AbsenceSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C741161B51CB006BC440 /* AbsenceSummaryViewController.xib */; };
+		F6A7C748161BB786006BC440 /* AbsenceSummaryMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A7C746161BB785006BC440 /* AbsenceSummaryMainController.m */; };
+		F6A7C749161BB786006BC440 /* AbsenceSummaryMainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F6A7C747161BB785006BC440 /* AbsenceSummaryMainController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +81,6 @@
 		78C986E01613E00A00A2F770 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		78C986E11613E00A00A2F770 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		78C986E21613E00B00A2F770 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		78C986E61613E17600A2F770 /* wcmc_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wcmc_logo.png; sourceTree = "<group>"; };
 		78C986E81613EF7900A2F770 /* LDAPService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDAPService.h; sourceTree = "<group>"; };
 		78C986E91613EF7900A2F770 /* LDAPService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDAPService.m; sourceTree = "<group>"; };
 		78C99F2916149DF200A2F770 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -97,6 +102,17 @@
 		F6A7C6E7161951AA006BC440 /* AbsenceTypeTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceTypeTableViewController.xib; sourceTree = "<group>"; };
 		F6A7C6EB16195486006BC440 /* AbsenceTypeTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceTypeTableDelegate.h; sourceTree = "<group>"; };
 		F6A7C6EC16195727006BC440 /* EditAbsenceTableDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditAbsenceTableDelegate.h; sourceTree = "<group>"; };
+		F6A7C72E161A45DA006BC440 /* AbsenceViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceViewControllerDelegate.h; sourceTree = "<group>"; };
+		F6A7C739161B4D69006BC440 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		F6A7C73B161B4D76006BC440 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F6A7C73D161B4DA3006BC440 /* MEDICAL-COLLEGE-BLACK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MEDICAL-COLLEGE-BLACK.png"; sourceTree = "<group>"; };
+		F6A7C73F161B51CA006BC440 /* AbsenceSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceSummaryViewController.h; sourceTree = "<group>"; };
+		F6A7C740161B51CB006BC440 /* AbsenceSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceSummaryViewController.m; sourceTree = "<group>"; };
+		F6A7C741161B51CB006BC440 /* AbsenceSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceSummaryViewController.xib; sourceTree = "<group>"; };
+		F6A7C744161B9EC2006BC440 /* AbsenceSummaryDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceSummaryDelegate.h; sourceTree = "<group>"; };
+		F6A7C745161BB784006BC440 /* AbsenceSummaryMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbsenceSummaryMainController.h; sourceTree = "<group>"; };
+		F6A7C746161BB785006BC440 /* AbsenceSummaryMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbsenceSummaryMainController.m; sourceTree = "<group>"; };
+		F6A7C747161BB785006BC440 /* AbsenceSummaryMainController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AbsenceSummaryMainController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +131,8 @@
 		78C9866A1610FE5D00A2F770 = {
 			isa = PBXGroup;
 			children = (
+				F6A7C73B161B4D76006BC440 /* Default-568h@2x.png */,
+				F6A7C739161B4D69006BC440 /* Default@2x.png */,
 				78C99F321614D77400A2F770 /* Default.png */,
 				78C99F301614D0ED00A2F770 /* Icon@2x.png */,
 				78C99F2E1614D0E800A2F770 /* Icon.png */,
@@ -160,9 +178,17 @@
 				78C99F391614DBD200A2F770 /* WeekOneTableViewController.h */,
 				78C99F3A1614DBD200A2F770 /* WeekOneTableViewController.m */,
 				78C99F3B1614DBD300A2F770 /* WeekOneTableViewController.xib */,
+				F6A7C72E161A45DA006BC440 /* AbsenceViewControllerDelegate.h */,
 				780583231616B9ED00751685 /* AbsenceViewController.h */,
 				780583241616B9F100751685 /* AbsenceViewController.m */,
 				780583251616B9F200751685 /* AbsenceViewController.xib */,
+				F6A7C744161B9EC2006BC440 /* AbsenceSummaryDelegate.h */,
+				F6A7C745161BB784006BC440 /* AbsenceSummaryMainController.h */,
+				F6A7C746161BB785006BC440 /* AbsenceSummaryMainController.m */,
+				F6A7C747161BB785006BC440 /* AbsenceSummaryMainController.xib */,
+				F6A7C73F161B51CA006BC440 /* AbsenceSummaryViewController.h */,
+				F6A7C740161B51CB006BC440 /* AbsenceSummaryViewController.m */,
+				F6A7C741161B51CB006BC440 /* AbsenceSummaryViewController.xib */,
 				F6A7C6EC16195727006BC440 /* EditAbsenceTableDelegate.h */,
 				780583281616BB0600751685 /* EditAbsenceTableViewController.h */,
 				780583291616BB0700751685 /* EditAbsenceTableViewController.m */,
@@ -207,7 +233,7 @@
 		78C986E51613E04100A2F770 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				78C986E61613E17600A2F770 /* wcmc_logo.png */,
+				F6A7C73D161B4DA3006BC440 /* MEDICAL-COLLEGE-BLACK.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -266,7 +292,6 @@
 				78C986911610FE5D00A2F770 /* MasterViewController.xib in Resources */,
 				78C986941610FE5D00A2F770 /* DetailViewController.xib in Resources */,
 				78C986E41613E00B00A2F770 /* LoginViewController.xib in Resources */,
-				78C986E71613E17600A2F770 /* wcmc_logo.png in Resources */,
 				78C99F2D16149DF200A2F770 /* MainViewController.xib in Resources */,
 				78C99F2F1614D0E800A2F770 /* Icon.png in Resources */,
 				78C99F311614D0ED00A2F770 /* Icon@2x.png in Resources */,
@@ -277,6 +302,11 @@
 				780583271616B9FC00751685 /* AbsenceViewController.xib in Resources */,
 				7805832C1616BB0A00751685 /* EditAbsenceTableViewController.xib in Resources */,
 				F6A7C6E9161951AA006BC440 /* AbsenceTypeTableViewController.xib in Resources */,
+				F6A7C73A161B4D69006BC440 /* Default@2x.png in Resources */,
+				F6A7C73C161B4D76006BC440 /* Default-568h@2x.png in Resources */,
+				F6A7C73E161B4DA3006BC440 /* MEDICAL-COLLEGE-BLACK.png in Resources */,
+				F6A7C743161B51CC006BC440 /* AbsenceSummaryViewController.xib in Resources */,
+				F6A7C749161BB786006BC440 /* AbsenceSummaryMainController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +333,8 @@
 				780583261616B9FC00751685 /* AbsenceViewController.m in Sources */,
 				7805832B1616BB0A00751685 /* EditAbsenceTableViewController.m in Sources */,
 				F6A7C6E8161951AA006BC440 /* AbsenceTypeTableViewController.m in Sources */,
+				F6A7C742161B51CC006BC440 /* AbsenceSummaryViewController.m in Sources */,
+				F6A7C748161BB786006BC440 /* AbsenceSummaryMainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

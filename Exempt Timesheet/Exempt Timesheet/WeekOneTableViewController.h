@@ -11,11 +11,16 @@
 
 
 @interface WeekOneTableViewController : UITableViewController<UITableViewDataSource> {
-    NSArray *days;
+    NSMutableArray *days;
     id<WeekTableViewDelegate> delegate;
+    int week1Or2;
 }
 @property (nonatomic, assign) id<WeekTableViewDelegate> delegate;
 
-@property (nonatomic, retain) NSArray *days;
+@property (nonatomic, retain) NSMutableArray *days;
+
+@property int week1Or2;
+
+-(void)updateDay:(Day *)day;
 
 @end

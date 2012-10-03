@@ -13,9 +13,14 @@
 @interface EditAbsenceTableViewController : UITableViewController {
     Day *d;
     id<EditAbsenceTableDelegate> delegate;
+    bool hasSaved;
+    UITextField *hoursTextField;
 }
 @property (nonatomic, assign) id<EditAbsenceTableDelegate> delegate;
 
 @property (nonatomic, retain) Day *d;
 
+@property (nonatomic, retain) UITextField *hoursTextField;
+
+-(void)setAbsenceTypeLabel:(NSString *)absenceType;
 @end

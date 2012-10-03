@@ -11,11 +11,11 @@
 @interface AbsenceType : NSObject {
     NSString *absenceName;
     NSString *absenceCode;
-    int hours;
+    float hours;
 }
 
 @property (nonatomic, retain) NSString *absenceName;
 @property (nonatomic, retain) NSString *absenceCode;
-@property int hours;
+@property float hours;
 
 @end

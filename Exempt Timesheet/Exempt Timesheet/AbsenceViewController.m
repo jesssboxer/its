@@ -9,11 +9,13 @@
 #import "AbsenceViewController.h"
 #import "EditAbsenceTableViewController.h"
 #import "AbsenceTypeTableViewController.h"
+#import "AbsenceType.h"
 
 @implementation AbsenceViewController
 
 @synthesize d;
 @synthesize detailViewController;
+@synthesize week1Or2;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,6 +50,11 @@
     
     [[self navigationItem] setTitle:@"Edit Hours"];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     // add the masterviewcontroller timesheet log tableview
     if (!detailViewController) {
         detailViewController = [[EditAbsenceTableViewController alloc] initWithNibName:@"EditAbsenceTableViewController" bundle:nil];
@@ -55,6 +62,8 @@
     detailViewController.d = d;
     detailViewController.delegate = self;
     [self.view addSubview:detailViewController.tableView];
+    
+    [detailViewController.tableView reloadData];
 }
 
 - (void)viewDidUnload
@@ -72,8 +81,17 @@
 
 
 
--(void)saveHours:(id)sender {
+-(void)saveHours:(id)sender{
     NSLog(@"save to absences and reload table");
+    // TODO - add a delegate so TimesheetViewController can reload the tables to update the hours
+    Day *day = detailViewController.d;
+    NSString *hours = detailViewController.hoursTextField.text;
+    if (day.absences != nil) {
+        AbsenceType *at = [day.absences objectAtIndex:0];
+        at.hours = [hours floatValue];
+    }
+    [[self navigationController] popViewControllerAnimated:YES];
+    [self.delegate didEditDay:d forWeek:week1Or2];
 }
 
 
@@ -91,7 +109,7 @@
 -(void)didSelectAbsenceType:(NSString *)absenceType {
     NSLog(@"selected absence type: %@", absenceType);
     // set absence type cell to display selected absenceType
-    
+    [detailViewController setAbsenceTypeLabel:absenceType];
 }
 
 @end

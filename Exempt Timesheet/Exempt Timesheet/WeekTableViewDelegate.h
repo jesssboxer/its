@@ -11,6 +11,6 @@
 
 @protocol WeekTableViewDelegate <NSObject>
 
-- (void)didSelectWeek:(Day *)d;
+- (void)didSelectWeek:(Day *)d whichWeek:(int)week1Or2;
 
 @end

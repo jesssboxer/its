@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface Timesheet : NSObject {
-    NSArray *week1;
-    NSArray *week2;
+    NSMutableArray *week1;
+    NSMutableArray *week2;
     NSString *submittedStr;
     NSString *payPeriodStr;
 }
 
-@property (nonatomic, retain) NSArray *week1;
-@property (nonatomic, retain) NSArray *week2;
+@property (nonatomic, retain) NSMutableArray *week1;
+@property (nonatomic, retain) NSMutableArray *week2;
 @property (nonatomic, retain) NSString *submittedStr;
 @property (nonatomic, retain) NSString *payPeriodStr;
 

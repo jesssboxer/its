@@ -16,6 +16,7 @@
 @synthesize timesheet;
 @synthesize week1Controller;
 @synthesize week2Controller;
+@synthesize absenceSummaryController;
 @synthesize weekSwitch;
 @synthesize payPeriodLabel;
 
@@ -34,6 +35,7 @@
         }
         week1Controller.tableView.frame = CGRectMake(20, 50+29, week1Controller.tableView.frame.size.width, self.week1Controller.tableView.frame.size.height);
         week1Controller.days = timesheet.week1;
+        week1Controller.week1Or2 = 1;
         week1Controller.delegate = self;
         [self.view addSubview:week1Controller.tableView];
         
@@ -42,8 +44,9 @@
         if (!week2Controller) {
             week2Controller = [[WeekOneTableViewController alloc] initWithNibName:@"WeekOneTableViewController" bundle:nil];
         }
-        week2Controller.tableView.frame = CGRectMake(20, 150+29, week2Controller.tableView.frame.size.width, self.week2Controller.tableView.frame.size.height);        
+        week2Controller.tableView.frame = CGRectMake(20, 50+29, week2Controller.tableView.frame.size.width, self.week2Controller.tableView.frame.size.height);        
         week2Controller.days = timesheet.week2;
+        week2Controller.week1Or2 = 2;
         week2Controller.delegate = self;
         [self.view addSubview:week2Controller.tableView];
         
@@ -53,7 +56,7 @@
         
         
         // add the confirm button
-        UIBarButtonItem *confirm = [[UIBarButtonItem alloc] initWithTitle:@"Confirm" style:UIBarButtonItemStyleBordered target:self action:@selector(confirm:)];
+        UIBarButtonItem *confirm = [[UIBarButtonItem alloc] initWithTitle:@"Confirm" style:UIBarButtonItemStyleBordered target:self action:@selector(confirmHours:)];
         [[self navigationItem] setRightBarButtonItem:confirm];
     }
     return self;
@@ -68,6 +71,7 @@
 }
 
 #pragma mark - View lifecycle
+
 
 - (void)viewDidLoad
 {
@@ -107,47 +111,56 @@
 	}
 }
 
--(void)confirm:(id)sender  {
-    int numHours = 70;
+-(float)calculateHours {
+    float numHours = 70;
     
     // check if any absences
-    int hoursOff = 0;
+    float hoursOff = 0;
     NSArray *w = week1Controller.days;
     for (int i=0; i < w.count; i++) {
         Day *d = [w objectAtIndex:i];
         if (d.absences != nil) {
             // add up the hours
             for (int j=0; j < d.absences.count; j++) {
-                AbsenceType *a = [d.absences objectAtIndex:i];
+                AbsenceType *a = [d.absences objectAtIndex:j];
                 hoursOff += a.hours;
             }
         }
     }
-    w = week2Controller.days;
-    for (int i=0; i < w.count; i++) {
-        Day *d = [w objectAtIndex:i];
-        if (d.absences != nil) {
+    NSArray *ww = week2Controller.days;
+    for (int i=0; i < ww.count; i++) {
+        Day *dd = [ww objectAtIndex:i];
+        if (dd.absences != nil) {
             // add up the hours
-            for (int j=0; j < d.absences.count; j++) {
-                AbsenceType *a = [d.absences objectAtIndex:i];
-                hoursOff += a.hours;
+            for (int j=0; j < dd.absences.count; j++) {
+                AbsenceType *aa = [dd.absences objectAtIndex:j];
+                hoursOff += aa.hours;
             }
         }
     }
     
     numHours -= hoursOff;
     
-    // TODO - figure out the hours worked
-    
-    NSString *msg = [NSString stringWithFormat:@"By clicking the OK button below, you are confirming that you worked %d hours during this pay period.", numHours];
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"Confirm"
-                          message: msg
-                          delegate: self
-                          cancelButtonTitle:@"Cancel"
-                          otherButtonTitles:@"Accept",nil];
-    [alert show];
+    return numHours;
 }
+
+-(void)confirmHours:(id)sender  {
+    // go to the summary view
+    if (!absenceSummaryController) {
+        absenceSummaryController = [[AbsenceSummaryMainController alloc] initWithNibName:@"AbsenceSummaryMainController" bundle:nil];
+    }
+    absenceSummaryController.week1 = week1Controller.days;
+    absenceSummaryController.week2 = week2Controller.days;
+    
+    NSRange range = [payPeriodLabel.text rangeOfString:@":"];
+    NSString *payPeriodStr = [payPeriodLabel.text substringFromIndex:range.location+1];
+    absenceSummaryController.payPeriodLabel = payPeriodStr;
+    absenceSummaryController.hoursWorked = [self calculateHours];
+    absenceSummaryController.delegate = self;    
+    
+    [self.navigationController pushViewController:absenceSummaryController animated:YES];
+}
+
 
 #pragma mark UIAlertDelegate
 
@@ -156,32 +169,46 @@
         NSLog(@"Submit");
         
         // save all the absence values to NSUserDefaults
-        NSDictionary *wk1AbsencesToSave = [[NSDictionary alloc] init];
+        NSMutableDictionary *wk1AbsencesToSave = [[NSMutableDictionary alloc] init];
         NSArray *w = week1Controller.days;
         for (int i=0; i < w.count; i++) {
             Day *d = [w objectAtIndex:i];
             if (d.absences != nil) {
-                NSDictionary *dayDict = [[NSDictionary alloc] init];
+                NSMutableDictionary *dayDict = [[NSMutableDictionary alloc] init];
                 // add up the hours
                 for (int j=0; j < d.absences.count; j++) {
-                    AbsenceType *a = [d.absences objectAtIndex:i];
-                    [dayDict setValue:[NSString stringWithFormat:@"%d", a.hours] forKey:a.absenceName];
+                    AbsenceType *a = [d.absences objectAtIndex:j];
+                    NSString *key = a.absenceName;
+
+                    NSString *val;
+                    NSMutableString *val1 = [NSMutableString string];
+                    val = [NSString stringWithFormat:@"%.02f",a.hours]; //%d or %i both is ok.
+                    [val1 appendString:val];
+                    
+                    [dayDict setObject:val forKey:key];
                 }                
-                [wk1AbsencesToSave setValue:dayDict forKey:d.dayName];
+                [wk1AbsencesToSave setObject:dayDict forKey:d.dayName];
             }
         }
-        w = week2Controller.days;
-        NSDictionary *wk2AbsencesToSave = [[NSDictionary alloc] init];
-        for (int i=0; i < w.count; i++) {
-            Day *d = [w objectAtIndex:i];
+        NSArray *ww = week2Controller.days;
+        NSMutableDictionary *wk2AbsencesToSave = [[NSMutableDictionary alloc] init];
+        for (int i=0; i < ww.count; i++) {
+            Day *d = [ww objectAtIndex:i];
             if (d.absences != nil) {
-                NSDictionary *dayDict = [[NSDictionary alloc] init];
+                NSMutableDictionary *dayDict = [[NSMutableDictionary alloc] init];
                 // add up the hours
                 for (int j=0; j < d.absences.count; j++) {
-                    AbsenceType *a = [d.absences objectAtIndex:i];
-                    [dayDict setValue:[NSString stringWithFormat:@"%d", a.hours] forKey:a.absenceName];
+                    AbsenceType *a = [d.absences objectAtIndex:j];
+                    NSString *key = a.absenceName;
+                    
+                    NSString *val;
+                    NSMutableString *val1 = [NSMutableString string];
+                    val = [NSString stringWithFormat:@"%.02f",a.hours]; //%d or %i both is ok.
+                    [val1 appendString:val];
+                    
+                    [dayDict setObject:val forKey:key];
                 }
-                [wk2AbsencesToSave setValue:dayDict forKey:d.dayName];
+                [wk2AbsencesToSave setObject:dayDict forKey:d.dayName];
             }
         }
         
@@ -191,7 +218,7 @@
         NSString *payPeriodStr = [payPeriodLabel.text substringFromIndex:range.location+1];
         [timesheetToSave setObject:payPeriodStr forKey:@"pay period" ];
         [timesheetToSave setObject:wk1AbsencesToSave forKey:@"week 1"];
-        [timesheetToSave setObject:wk1AbsencesToSave forKey:@"week 2"];
+        [timesheetToSave setObject:wk2AbsencesToSave forKey:@"week 2"];
         
         // Get current datetime
         NSDate *currentDateTime = [NSDate date];
@@ -227,14 +254,42 @@
 #pragma mark WeekTableViewDelegate
 
 
-- (void)didSelectWeek:(Day *)d {
+- (void)didSelectWeek:(Day *)d whichWeek:(int)week1Or2 {
     // i think i have to make the parent push the view
      if (!self.detailViewController) {
      self.detailViewController = [[AbsenceViewController alloc] initWithNibName:@"AbsenceViewController" bundle:nil];
      }
      self.detailViewController.d = d;
-     [self.navigationController pushViewController:self.detailViewController animated:YES];
+    self.detailViewController.week1Or2 = week1Or2;
+    self.detailViewController.delegate = self;
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
      
+}
+
+#pragma mark AbsenceViewControllerDelegate
+
+-(void)didEditDay:(Day *)day forWeek:(int)forWeek {
+    // update the day in the appropriate controller
+    if (forWeek == 1) {
+        [week1Controller updateDay:day];
+    } else {
+        [week2Controller updateDay:day];
+    }
+}
+
+#pragma mark AbsenceSummaryDelegate
+
+-(void)confirm  {
+    float numHours = [self calculateHours];
+    
+    NSString *msg = [NSString stringWithFormat:@"By clicking the OK button below, you are confirming that you worked %.02f hours during this pay period.", numHours];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Confirm"
+                          message: msg
+                          delegate: self
+                          cancelButtonTitle:@"Cancel"
+                          otherButtonTitles:@"Accept",nil];
+    [alert show];
 }
 
 @end

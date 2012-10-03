@@ -14,4 +14,12 @@
 @synthesize absenceName;
 @synthesize hours;
 
+-(id)init {
+    absenceName = nil;
+    absenceCode = nil;
+    hours = 0;
+    
+    return self;
+}
+
 @end

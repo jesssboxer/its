@@ -7,11 +7,13 @@
 //
 
 #import "EditAbsenceTableViewController.h"
+#import "AbsenceType.h"
 
 @implementation EditAbsenceTableViewController
 
 @synthesize d;
 @synthesize delegate = _delegate;
+@synthesize hoursTextField;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -42,6 +44,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    hasSaved = false;
+    
+    if (hoursTextField == nil) {
+        hoursTextField = [[UITextField alloc] initWithFrame:CGRectMake(85, 10, 200, 30)];
+    }
 }
 
 - (void)viewDidUnload
@@ -54,6 +61,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -83,8 +91,8 @@
 {
     // Return the number of sections.
     int numSections = 1;
-    if (d.absences != nil) {
-        numSections = d.absences.count+1; // add one for editing
+    if (d.absences != nil && hasSaved) {
+        numSections = d.absences.count+1; // add one for editing after saving
     }
     return numSections;
 }
@@ -114,21 +122,33 @@
         } else if (indexPath.row == 1) {
             // type
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
-            cell.textLabel.text = @"Type";
+            AbsenceType *at = [d.absences objectAtIndex:0];
+            if (at.absenceName != nil) {
+                cell.textLabel.text = [NSString stringWithFormat:@"Type: %@", at.absenceName ];
+            } else {
+                cell.textLabel.text = @"Type: ";
+            }
         } else {
             // hours
-            cell.textLabel.text = @"Hours";
-            UITextField *hoursTextField = [[UITextField alloc] initWithFrame:CGRectMake(85, 10, 200, 30)];
             hoursTextField.adjustsFontSizeToFitWidth = YES;
             hoursTextField.textColor = [UIColor blackColor];
-            hoursTextField.keyboardType = UIKeyboardTypeNumberPad;
+            hoursTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             hoursTextField.backgroundColor = [UIColor whiteColor];
             hoursTextField.autocorrectionType = UITextAutocorrectionTypeNo; // no auto correction support
             hoursTextField.textAlignment = UITextAlignmentLeft;
-            hoursTextField.clearButtonMode = UITextFieldViewModeUnlessEditing; // no clear 'x' button to the right
+            //hoursTextField.clearButtonMode = UITextFieldViewModeUnlessEditing; // no clear 'x' button to the right
             [hoursTextField setEnabled: YES];
             hoursTextField.placeholder = @"number of hours";
             [cell addSubview:hoursTextField];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+            AbsenceType *at = [d.absences objectAtIndex:0];
+            if (at.absenceName == nil) {
+                hoursTextField.text = nil;
+            } else if (at.hours > 0) {
+                hoursTextField.text = [NSString stringWithFormat:@"%.02f", at.hours];
+            }
+            cell.textLabel.text = @"Hours:";
+
         }
     } else if (whichSection % 2 == 0) { // even section
         
@@ -195,23 +215,37 @@
  }
  */
 
+
+-(void)setAbsenceTypeLabel:(NSString *)absenceType {
+    NSLog(@"hi absence type: %@", absenceType);
+    if (d.absences == nil) {
+        AbsenceType *at = [[AbsenceType alloc] init];
+        at.absenceName = absenceType;
+        d.absences = [NSMutableArray arrayWithObject:at];
+    } else {
+        AbsenceType *at = [d.absences objectAtIndex:0];
+        at.absenceName = absenceType;
+    }
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
     /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
-
+    
     if (indexPath.row == 1) {
         NSLog(@"change absence type?");
         [self.delegate didSelectToEditAbsenceType];
     }
-
+    
 }
 
 @end

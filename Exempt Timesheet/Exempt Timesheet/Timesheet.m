@@ -20,7 +20,7 @@
     
     if ((self = [super init])) {
         // setup week arrays
-        week1 = [[NSArray alloc] initWithObjects:[[Day alloc] initWithDayName:@"Sunday"], 
+        week1 = [[NSMutableArray alloc] initWithObjects:[[Day alloc] initWithDayName:@"Sunday"], 
                  [[Day alloc] initWithDayName:@"Monday"],
                  [[Day alloc] initWithDayName:@"Tuesday"],
                  [[Day alloc] initWithDayName:@"Wednesday"],
@@ -28,7 +28,14 @@
                  [[Day alloc] initWithDayName:@"Friday"],
                  [[Day alloc] initWithDayName:@"Saturday"],
                  nil];
-        week2 = [week1 copy];
+        week2 = [[NSMutableArray alloc] initWithObjects:[[Day alloc] initWithDayName:@"Sunday"],
+                 [[Day alloc] initWithDayName:@"Monday"],
+                 [[Day alloc] initWithDayName:@"Tuesday"],
+                 [[Day alloc] initWithDayName:@"Wednesday"],
+                 [[Day alloc] initWithDayName:@"Thursday"],
+                 [[Day alloc] initWithDayName:@"Friday"],
+                 [[Day alloc] initWithDayName:@"Saturday"],
+                 nil];
     }
     return self;
 }
