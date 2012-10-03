@@ -21,9 +21,7 @@
 		78C986841610FE5D00A2F770 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986831610FE5D00A2F770 /* main.m */; };
 		78C986881610FE5D00A2F770 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986871610FE5D00A2F770 /* AppDelegate.m */; };
 		78C9868B1610FE5D00A2F770 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9868A1610FE5D00A2F770 /* MasterViewController.m */; };
-		78C9868E1610FE5D00A2F770 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C9868D1610FE5D00A2F770 /* DetailViewController.m */; };
 		78C986911610FE5D00A2F770 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C9868F1610FE5D00A2F770 /* MasterViewController.xib */; };
-		78C986941610FE5D00A2F770 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C986921610FE5D00A2F770 /* DetailViewController.xib */; };
 		78C986E31613E00B00A2F770 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E11613E00A00A2F770 /* LoginViewController.m */; };
 		78C986E41613E00B00A2F770 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C986E21613E00B00A2F770 /* LoginViewController.xib */; };
 		78C986EA1613EF7900A2F770 /* LDAPService.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C986E91613EF7900A2F770 /* LDAPService.m */; };
@@ -74,10 +72,7 @@
 		78C986871610FE5D00A2F770 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		78C986891610FE5D00A2F770 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		78C9868A1610FE5D00A2F770 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		78C9868C1610FE5D00A2F770 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		78C9868D1610FE5D00A2F770 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		78C986901610FE5D00A2F770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
-		78C986931610FE5D00A2F770 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		78C986E01613E00A00A2F770 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		78C986E11613E00A00A2F770 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		78C986E21613E00B00A2F770 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -205,9 +200,6 @@
 				78C986891610FE5D00A2F770 /* MasterViewController.h */,
 				78C9868A1610FE5D00A2F770 /* MasterViewController.m */,
 				78C9868F1610FE5D00A2F770 /* MasterViewController.xib */,
-				78C9868C1610FE5D00A2F770 /* DetailViewController.h */,
-				78C9868D1610FE5D00A2F770 /* DetailViewController.m */,
-				78C986921610FE5D00A2F770 /* DetailViewController.xib */,
 				78C99F431614DF8400A2F770 /* Timesheet.h */,
 				78C99F441614DF8400A2F770 /* Timesheet.m */,
 				7805830E1614E2DA00751685 /* Day.h */,
@@ -292,7 +284,6 @@
 			files = (
 				78C986821610FE5D00A2F770 /* InfoPlist.strings in Resources */,
 				78C986911610FE5D00A2F770 /* MasterViewController.xib in Resources */,
-				78C986941610FE5D00A2F770 /* DetailViewController.xib in Resources */,
 				78C986E41613E00B00A2F770 /* LoginViewController.xib in Resources */,
 				78C99F2D16149DF200A2F770 /* MainViewController.xib in Resources */,
 				78C99F2F1614D0E800A2F770 /* Icon.png in Resources */,
@@ -322,7 +313,6 @@
 				78C986841610FE5D00A2F770 /* main.m in Sources */,
 				78C986881610FE5D00A2F770 /* AppDelegate.m in Sources */,
 				78C9868B1610FE5D00A2F770 /* MasterViewController.m in Sources */,
-				78C9868E1610FE5D00A2F770 /* DetailViewController.m in Sources */,
 				78C986E31613E00B00A2F770 /* LoginViewController.m in Sources */,
 				78C986EA1613EF7900A2F770 /* LDAPService.m in Sources */,
 				78C99F2C16149DF200A2F770 /* MainViewController.m in Sources */,
@@ -357,14 +347,6 @@
 				78C986901610FE5D00A2F770 /* en */,
 			);
 			name = MasterViewController.xib;
-			sourceTree = "<group>";
-		};
-		78C986921610FE5D00A2F770 /* DetailViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				78C986931610FE5D00A2F770 /* en */,
-			);
-			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -166,8 +166,11 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.delegate didSelectWeek:[days objectAtIndex:indexPath.row] whichWeek:self.week1Or2];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     [self.delegate didSelectWeek:[days objectAtIndex:indexPath.row] whichWeek:self.week1Or2];
 }
 

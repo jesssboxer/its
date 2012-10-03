@@ -219,4 +219,10 @@
     [self.delegate didSelectTimesheetToView:t];
 }
 
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    Timesheet *t = savedTimesheets[indexPath.row];
+    [self.delegate didSelectTimesheetToView:t];
+}
+
 @end
