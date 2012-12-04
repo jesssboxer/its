@@ -6,10 +6,13 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+#define kTimesheetsURL [NSURL URLWithString: @"http://thisisit.local:8888/its_distro/rest/node"]
+
 #import "TimesheetViewController.h"
 #import "Day.h"
 #import "AbsenceType.h"
 #import "ConfirmationViewController.h"
+#import "ASIFormDataRequest.h"
 
 @implementation TimesheetViewController
 
@@ -19,6 +22,7 @@
 @synthesize absenceSummaryController;
 @synthesize weekSwitch;
 @synthesize payPeriodLabel;
+@synthesize timesheetPeriodNID;
 
 @synthesize detailViewController = _detailViewController;
 
@@ -165,8 +169,127 @@
 
 #pragma mark UIAlertDelegate
 
+
+-(NSDictionary *)getPostDictionary:(NSString *)val {
+    NSDictionary *valueDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               val, @"value", nil];
+    NSDictionary *undDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                             valueDict, @"und", nil];
+    return undDict;
+}
+
+-(NSDictionary *)getSafeFormatPostDictionary:(NSString *)val {
+    NSDictionary *valueDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               val, @"value",
+                               @"", @"format",
+                               val, @"safe_value",
+                                    nil];
+    NSDictionary *zeroDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  valueDict, @"0", nil];
+    NSDictionary *undDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                             zeroDict, @"und", nil];
+    return undDict;
+}
+
+-(NSDictionary *)getZeroPostDictionary:(NSString *)val {
+    NSDictionary *valueDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               val, @"value",
+                               nil];
+    NSDictionary *zeroDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                              valueDict, @"0", nil];
+    NSDictionary *undDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                             zeroDict, @"und", nil];
+    return undDict;
+}
+-(NSDictionary *)getTargetPostDictionary:(NSString *)val {
+    NSDictionary *valueDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                               val, @"target_id", nil];
+    //NSDictionary *zeroDict = [NSDictionary dictionaryWithObjectsAndKeys:
+    //                          valueDict, @"0", nil];
+    //NSDictionary *undDict = [NSDictionary dictionaryWithObjectsAndKeys:
+    //                         zeroDict, @"und", nil];
+    NSDictionary *undDict = [NSDictionary dictionaryWithObjectsAndKeys:
+                             valueDict, @"und", nil];
+    return undDict;
+}
+
+
+-(void)postFullTimesheetEntry {
+    NSError* error;
+    
+    NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"Timesheet Entry", @"title",
+                          @"its_timesheet", @"type",
+                          [self getSafeFormatPostDictionary:@"jml2003"], @"field_cwid",
+                          [self getSafeFormatPostDictionary:@"NONE" ], @"field_absence_type",
+                          [self getTargetPostDictionary:timesheetPeriodNID], @"field_timesheet_period_entity",
+                          nil];
+    
+    //convert object to data
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:info
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    //print out the data contents
+    NSLog(@"%@", [[NSString alloc] initWithData:jsonData
+                                       encoding:NSUTF8StringEncoding]);
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:kTimesheetsURL];
+    [request addRequestHeader:@"User-Agent" value:@"ASIHTTPRequest"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request appendPostData:jsonData];
+	[request startSynchronous];
+	
+	NSLog(@"%@",[request responseString]);
+    
+}
+
+-(void)postTimesheetEntry:(AbsenceType *)a forDay:(Day *)d forWeek:(NSString *)w {
+    // post absence type (a.absenceName), cwid ("jml2003"), timesheet period (timesheetPeriodNID),
+    //   dayName (d.dayName), week (1), number of hours (val)
+    //build an info object and convert to json
+    NSError* error;
+    
+    NSString *val;
+    NSMutableString *val1 = [NSMutableString string];
+    val = [NSString stringWithFormat:@"%.02f",a.hours]; //%d or %i both is ok.
+    [val1 appendString:val];
+    
+    
+
+    
+    NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"Timesheet Entry", @"title",
+                          @"its_timesheet", @"type",
+                          [self getSafeFormatPostDictionary:@"jml2003"], @"field_cwid",
+                          [self getSafeFormatPostDictionary:a.absenceName ], @"field_absence_type",
+                          [self getZeroPostDictionary:val], @"field_number_of_hours",
+                          [self getPostDictionary:w], @"field_week",
+                          [self getPostDictionary:d.dayName], @"field_day",
+                          [self getTargetPostDictionary:timesheetPeriodNID], @"field_timesheet_period_entity",
+                          nil];
+    
+    //convert object to data
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:info
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    //print out the data contents
+    NSLog(@"%@", [[NSString alloc] initWithData:jsonData
+                                       encoding:NSUTF8StringEncoding]);
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:kTimesheetsURL];
+    [request addRequestHeader:@"User-Agent" value:@"ASIHTTPRequest"];
+    [request addRequestHeader:@"Content-Type" value:@"application/json"];
+    [request appendPostData:jsonData];
+	[request startSynchronous];
+	
+	NSLog(@"%@",[request responseString]);
+    
+}
+
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 1) {        
+	if (buttonIndex == 1) {
         NSLog(@"Submit");
         
         // save all the absence values to NSUserDefaults
@@ -187,8 +310,14 @@
                     [val1 appendString:val];
                     
                     [dayDict setObject:val forKey:key];
+                    
+                    
+                    //build an info object, convert to json and post it
+                    [self postTimesheetEntry:a forDay:d forWeek:@"1"];
+                    
                 }                
                 [wk1AbsencesToSave setObject:dayDict forKey:d.dayName];
+                
             }
         }
         NSArray *ww = week2Controller.days;
@@ -208,6 +337,9 @@
                     [val1 appendString:val];
                     
                     [dayDict setObject:val forKey:key];
+                    
+                    //build an info object, convert to json and post it
+                    [self postTimesheetEntry:a forDay:d forWeek:@"2"];
                 }
                 [wk2AbsencesToSave setObject:dayDict forKey:d.dayName];
             }
@@ -243,6 +375,12 @@
         }
         [plist addObject:timesheetToSave];
         [plist writeToFile:path atomically:YES];
+        
+        
+        // check if a full week was worked
+        if (wk1AbsencesToSave.count == 0 && wk2AbsencesToSave.count == 0) {
+            [self postFullTimesheetEntry];
+        }
         
         // push the confirmation view
         ConfirmationViewController *m = [[ConfirmationViewController alloc] initWithNibName:@"ConfirmationViewController" bundle:nil];

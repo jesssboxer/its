@@ -24,6 +24,7 @@
     AbsenceSummaryMainController *absenceSummaryController;
     IBOutlet UISegmentedControl *weekSwitch;
     IBOutlet UILabel *payPeriodLabel;
+    NSString *timesheetPeriodNID;
 }
 
 @property (nonatomic, retain) Timesheet *timesheet;
@@ -32,6 +33,7 @@
 @property (nonatomic, retain) AbsenceSummaryMainController *absenceSummaryController;
 @property (nonatomic, retain) IBOutlet UISegmentedControl *weekSwitch;
 @property (nonatomic, retain) IBOutlet UILabel *payPeriodLabel;
+@property (nonatomic, retain) NSString *timesheetPeriodNID;
 
 @property (strong, nonatomic) AbsenceViewController *detailViewController;
 

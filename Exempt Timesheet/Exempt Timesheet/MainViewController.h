@@ -12,8 +12,11 @@
 @class MasterViewController;
 @class AbsenceSummaryMainController;
 
-@interface MainViewController : UIViewController<MasterViewDelegate> {
+@interface MainViewController : UIViewController<MasterViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
     IBOutlet UILabel *currentPayPeriodLabel;
+    NSMutableArray *timesheetPeriods;
+    int selectedPeriod;
+    NSString *selectedPeriodNID;
 }
 
 @property (strong, nonatomic) MasterViewController *masterViewController;
@@ -22,5 +25,6 @@
 @property (strong, nonatomic) AbsenceSummaryMainController *detailViewController;
 
 -(IBAction)editTimesheet:(id)sender;
+-(IBAction)showTimesheetPeriodPicker:(id)sender;
 
 @end
