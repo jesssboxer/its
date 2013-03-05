@@ -1,0 +1,47 @@
+Map/Photos 10% Time
+
+http://blog.wayfindersoftware.com/wp-content/uploads/2011/05/hospital2.png
+http://blog.wayfindersoftware.com/wp-content/uploads/2011/08/H2T_State_Government_Steps_Lg1.png
+http://blog.wayfindersoftware.com/wp-content/uploads/2011/08/H2T_Govt_Building_Steps_Lg2.png
+http://blog.wayfindersoftware.com/wp-content/uploads/2011/08/H2T_Corporate_Steps_Lg1.png
+http://blog.wayfindersoftware.com/wp-content/uploads/2011/08/H2T_Susquehanna1.png
+
+http://temple.here2theresoftware.com/
+
+http://samples.mapsalive.com/20088/Page2.htm
+
+http://map.wisc.edu/
+http://map.wisc.edu/pages/about
+
+http://www.axismaps.com/portfolio.php
+
+---
+
+http://kineticjs.com/
+http://www.html5canvastutorials.com/labs/html5-canvas-interactive-building-map/
+
+---
+
+Pat's Personal Photo Site: http://pkpix.com/
+
+---
+
+function getData() {
+        return {
+          'Cell Biography': {
+            color: 'yellow',
+            points: [111, 2703, 306, 2703, 372, 2526, 354, 2523, 360, 2502, 321, 2499, 354, 2412, 387, 2412, 375, 2445, 579, 2445, 597, 2388, 279, 2388, 252, 2442, 234, 2442]
+          },
+          '2nd Floor': {
+            color: 'red',
+            points: [72, 228, 73, 193, 340, 96, 498, 154, 498, 191, 341, 171]
+          },
+          '3rd Floor': {
+            color: 'yellow',
+            points: [73, 192, 73, 160, 340, 23, 500, 109, 499, 139, 342, 93]
+          },
+          'Gym': {
+            color: 'green',
+            points: [498, 283, 503, 146, 560, 136, 576, 144, 576, 278, 500, 283]
+          }
+        }

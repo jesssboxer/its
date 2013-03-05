@@ -1,0 +1,141 @@
+<!doctype html>
+
+<!--#set var="domain_root" value="/project_tux/" -->
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+<!--#include virtual="/static.01/inc/head.inc" -->
+	<title>User Experience Project</title>
+</head>
+
+<body>
+	
+	<div id="container">
+		<!--#include virtual="/static.01/inc/header.inc" -->
+
+<!--
+		<nav class="main">
+			<ul class="clearfix">
+				<li><a class="sticky" href="#">Page One</a></li>
+				<li><a class="" href="#">Page Two</a></li>
+				<li><a class="" href="#">Page Three</a></li>
+				<li><a class="" href="#">Page Four</a></li>
+				<li><a class="" href="#">Page Five</a></li>
+			</ul>
+		</nav>
+-->
+
+		<div id="main_home" role="main" class="clearfix">
+			<h1>Web Communications</h1>
+				<ul id="staff">
+				<li><img src="headshots/alm2046-f.jpg"  title="Alan Mooiman<br>UI Developer" /></li>
+				<li><img src="headshots/bsb2002-f.jpg"  title="Bernard Boey<br>Senior User Experience Designer" /></li>
+				<li><img src="headshots/cae2009-f.jpg"  title="Viviana Espinosa<br>UI Developer" /></li>
+				<li><img src="headshots/chf2013-f.jpg"  title="Christoff Frazier<br>Web Support Specialist" /></li>
+				<li><img src="headshots/chh2010-f.jpg"  title="Chris Huang<br>Content Services Manager" /></li>
+				<li><img src="headshots/dof2012-f.jpg"  title="Doug Fabrizio<br>Web Operations Manager" /></li>
+				<li><img src="headshots/dwd2001-f.jpg"  title="Dan Dickinson<br>Associate Director" /></li>
+				<li><img src="headshots/elc2013-f.jpg"  title="Eliza Chan<br>Software Developer" /></li>
+				<li><img src="headshots/hel2011-f.jpg"  title="Helen Lau<br>Software Developer" /></li>
+				<li><img src="headshots/ikar-f.jpg"  title="Inessa Weiner<br>Senior Database Developer" /></li>
+				<li><img src="headshots/jas2005-f.jpg"  title="Jason Specland<br>Sharepoint Developer" /></li>
+				<li><img src="headshots/joh2002-f.jpg"  title="John Huang<br>Systems Developer I" /></li>
+				<li><img src="headshots/pht2003-f.jpg"  title="Phani Babu Tikkala<br>CMS Developer" /></li>
+				<li><img src="headshots/stg2008-f.jpg"  title="Stephen Gradinscak<br>Web Support Specialist" /></li>
+				<li><img src="headshots/tiw9014-f.jpg"  title="Tim Wang" /></li>
+				<li><img src="headshots/xif2005-f.jpg"  title="Xiaobo Fuld<br>Sharepoint Developer" /></li>
+								
+				
+				</ul>
+
+		
+		
+		</div> <!--! end of #main -->
+		
+		<!--#include virtual="/static.01/inc/footer.inc" -->
+	</div> <!--! end of #container -->
+
+	<!--#include virtual="/static.01/inc/js.inc" -->
+	<!--#include virtual="${domain_root}static_local/inc/js.inc" -->
+	
+	<script type="text/javascript">
+
+
+	$(document).ready(function(){									
+		var thumbs = $("ul li img");		
+		
+		for (var i = 0, ii = thumbs.length; i < ii; i++){
+			if (thumbs[i].title && thumbs[i].title.length > 0)
+			{			
+				var imgtitle = thumbs[i].title;		
+				$(thumbs[i]).wrap('<div class="wrapper" />').				
+				after('<div class=\'caption\'>' + imgtitle + '</div>').
+				removeAttr('title');
+											
+			}					
+		}
+					
+	$('.wrapper').hover(
+		function(){
+			$(this).find('img').animate({opacity: ".3"}, 300);		
+			$(this).find('.caption').animate({top:"-218px"}, 300);			
+		}, 
+		function(){
+			$(this).find('img').animate({opacity: "1.0"}, 300);					
+			$(this).find('.caption').animate({top:"85px"}, 100);
+		}		
+		);			
+	});
+
+	$(document).ready(function(){
+		//To switch directions up/down and left/right just place a "-" in front of the top/left attribute
+		//Vertical Sliding
+		$('.boxgrid.slidedown').hover(function(){
+			$(".cover", this).stop().animate({top:'-260px'},{queue:false,duration:300});
+		}, function() {
+			$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:300});
+		});
+		//Horizontal Sliding
+		$('.boxgrid.slideright').hover(function(){
+			$(".cover", this).stop().animate({left:'325px'},{queue:false,duration:300});
+		}, function() {
+			$(".cover", this).stop().animate({left:'0px'},{queue:false,duration:300});
+		});
+		//Diagnal Sliding
+		$('.boxgrid.thecombo').hover(function(){
+			$(".cover", this).stop().animate({top:'260px', left:'325px'},{queue:false,duration:300});
+		}, function() {
+			$(".cover", this).stop().animate({top:'0px', left:'0px'},{queue:false,duration:300});
+		});
+		//Partial Sliding (Only show some of background)
+		$('.boxgrid.peek').hover(function(){
+			$(".cover", this).stop().animate({top:'90px'},{queue:false,duration:160});
+		}, function() {
+			$(".cover", this).stop().animate({top:'0px'},{queue:false,duration:160});
+		});
+		//Full Caption Sliding (Hidden to Visible)
+		$('.boxgrid.captionfull').hover(function(){
+			$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+		}, function() {
+			$(".cover", this).stop().animate({top:'260px'},{queue:false,duration:160});
+		});
+		//Caption Sliding (Partially Hidden to Visible)
+		$('.boxgrid.caption').hover(function(){
+			$(".cover", this).stop().animate({top:'160px'},{queue:false,duration:160});
+		}, function() {
+			$(".cover", this).stop().animate({top:'220px'},{queue:false,duration:160});
+		});
+	});
+
+	$('body').mousemove(function(e){
+    $('.log').html("mouse position: x=" + e.pageX + "; y=" + e.pageY);
+});
+</script>
+
+	
+</body>
+</html>

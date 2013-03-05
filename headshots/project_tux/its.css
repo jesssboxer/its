@@ -1,0 +1,449 @@
+
+p, div, form, h1, h2, h3, h4, td, th {
+    padding: 0;
+    margin: 0;
+}
+img {
+    border: 0;
+}
+textarea {
+    resize: none;
+}
+a {
+    cursor: pointer;
+}
+table {
+    border - collapse: collapse;
+}
+td, th {
+    text - align: left;
+    vertical - align: top;
+}.relative {
+    position: relative;
+}.clear {
+    display: block;
+    height: 1px;
+    width: 100 % ;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}.clear span {
+    display: none;
+}
+a.silent {
+    text - decoration: none;
+}
+a.silent span, a.silent: hover {
+    text - decoration: underline;
+}
+table.no - collapse,
+.no - collapse table {
+    border - collapse: separate;
+}.print - only {
+    display: none;
+}@media print {.noprint {
+        display: none!important;
+    }.print - only {
+        display: block;
+    }
+}
+html {
+    height: 100 % ;
+    min - height: 100 % ;
+}
+body,
+td,
+th,
+input,
+textarea,
+a {
+    font - family: Arial;
+    font - size: 11px;
+    color: #545454;}body {background: # fff;
+    padding: 0;
+    margin: 0;
+    height: 100 % ;
+    min - height: 100 % ;
+}#Main {
+    margin: 0;
+    padding: 0;
+    height: 100 % ;
+    min - height: 100 % ;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}#Main - 2 {
+    position: absolute;
+    left: 140px;
+    right: 20px;
+    top: 20px;
+    bottom: 20px;
+    background - color: white;
+}#MenuContainer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    right: 0px;
+    width: 98px;
+}#MenuContent,
+#MenuContent tr,
+#MenuContent td {
+    height: 100 % ;
+    width: 100 % ;
+}#MenuContent td {
+    vertical - align: middle;
+}#MenuContent ol,
+#MenuContent li {
+    width: 100 % ;
+    padding: 0;
+    margin: 0;
+    list - style: none;
+    white - space: nowrap;
+}#MenuContent li.Level0Item {
+    text - align: right;
+    width: 100 % ;
+    padding: 4px 0px;
+}#MenuContent a.Level0Item,
+#MenuContent a.Level0ItemSelected {
+    text - decoration: none;
+    color: #545454;}# MenuContent a.Level0Item: hover,
+    #MenuContent li.Level0Item: hover a.Level0Item,
+    #MenuContent a.Level0ItemSelected {
+        color: #e2001a;
+    }#MenuTop {
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        width: 100 % ;
+    }#MenuBottom {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100 % ;
+        height: 20px;
+    }#FacebookProfile {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 20px;
+        width: 10px;
+        height: 20px;
+        background: url(/images/facebook.png) left top no - repeat transparent;
+    }
+    body.no - iDevice#FacebookProfile: hover {
+        background - position: 0px - 20px;
+    }#Imprint {
+        position: absolute;
+        bottom: -3px;
+        right: 0px;
+        text - decoration: none;
+    }
+    h1 {
+        display: block;
+        font - size: 38px;
+        line - height: 36px;
+        font - family: IntroRegular,
+        Arial;
+        letter - spacing: -1.5px;
+    }
+    div.editor - small_intro_headline {
+        font - family: IntroRegular,
+        Arial;
+        letter - spacing: -1.5px;
+        font - size: 20px;
+        line - height: 19px;
+    }@media screen and(max - width: 1000px) {
+        h1 {
+            font - size: 37px;
+        }
+    }
+    div.editor - small_headline {
+        font - weight: bold;
+        font - size: 14px;
+        font - family: Arial;
+        text - transform: uppercase;
+        padding - bottom: 10px;
+    }.scrollContainer {
+        width: 100 % ;
+        height: 100 % ;
+        overflow: hidden;
+    }.scrollContent,
+    .scrollContent tr.scrollContent td {
+        height: 100 % ;
+    }
+    td.backToStartContainer {
+        display: none;
+    }
+    td.backToStartContainer a {
+        cursor: pointer!important;
+    }.darkContainer {
+        width: 100 % ;
+        height: 100 % ;
+        display: block;
+        background: url(/images/raster.png) top left repeat transparent;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background: none;
+        background - color: black; - moz - opacity: 0.55; - khtml - opacity: 0.55; - webkit - opacity: 0.55;
+        opacity: 0.55;
+        filter: alpha(opacity = 55); - ms - filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=55)";
+    }
+    body.iDevice.darkContainer,
+    body.ie8.darkContainer {
+        display: none;
+    }.backToStartContainer {
+        vertical - align: middle;
+    }.backToStart {
+        position: absolute;
+        left: 23px;
+        top: 50 % ;
+        margin - top: -12px;
+    }
+    body.no - iDevice.backToStart a: hover {
+        color: #E2001A;
+    }.backToStart a {
+        display: block;
+        height: 100 % ;
+        padding - left: 22px;
+        background: url(/images/smallLeftArrow.png) left center no - repeat transparent;
+        font - family: IntroRegular,
+        Arial;
+        font - size: 18px;
+        text - decoration: none;
+    }#NextPrevContainer {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 69px;
+        height: 34px;
+        background - color: #e7e7e7;
+    }#NextContent,
+    #PrevContent {
+        position: absolute;
+        top: 0px;
+        height: 34px;
+        width: 34px;
+        background: url(/images/next_prev.jpg) - 34px 0px no - repeat transparent;
+    }#NextContent {
+        right: 0px;
+    }#PrevContent {
+        left: 0px;
+        background - position: 0px 0px;
+    }.contentHolder a.standardLink {
+        cursor: pointer!important;
+    }
+    img.to_load,
+    img.loading {
+        display: none;
+    }
+    img.resize {
+        position: absolute;
+    }
+    img.spacer_loading {
+        position: absolute;
+        top: 50 % ;
+        left: 50 % ;
+        margin - left: -16px;
+        margin - top: -16px;
+        width: 32px;
+        height: 32px;
+    }#Logo {
+        display: block;
+        width: 122px;
+        height: 122px;
+        background: url(/images/abm_logo.jpg) top left no - repeat;
+        position: absolute;
+        right: 0px;
+        top: 50 % ;
+        margin - top: -61px;
+        z - index: 20000;
+    }#Awwwards {
+        display: block;
+        width: 69px;
+        height: 105px;
+        background: url(/images/awwwawards.png) top left no - repeat;
+        position: absolute;
+        right: 0px;
+        top: 20px;
+        z - index: 19999;
+    }@font - face {
+        font - family: 'IntroRegular';
+        src: url('/css/fonts/intro-webfont.eot');
+        src: url('/css/fonts/intro-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/css/fonts/intro-webfont.woff') format('woff'),
+        url('/css/fonts/intro-webfont.ttf') format('truetype'),
+        url('/css/fonts/intro-webfont.svg#IntroRegular') format('svg');
+        font - weight: normal;
+        font - style: normal;
+    }#Main - 2 {
+        background - color: white;
+    }.projectContainer {
+        display: block;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        background - color: #f1f1f1;
+        overflow: hidden;
+        text - decoration: none;
+    }
+    div.subMenuContainer {
+        height: 100 % ;
+        width: 42px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+    a.subMenuContent {
+        width: 42px;
+        background - color: white;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        display: block;
+        text - decoration: none;
+    }
+    div.overflowContainer {
+        width: 42px;
+        height: 100 % ;
+        overflow: hidden;
+    }.rotateContent {
+        -webkit - transform: rotate(-90deg); - moz - transform: rotate(-90deg); - o - transform: rotate(-90deg); - ms - transform: rotate(-90deg);
+        transform: rotate(-90deg); - ms - filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=-1.8369701987210297e-16, M12=1, M21=-1, M22=-1.8369701987210297e-16)"; - ms - filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)"; - sand - transform: rotate(270deg);
+        display: block;
+        white - space: nowrap;
+        text - align: center;
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+    body.ie9.rotateContent {
+        filter: none\9;
+    }
+    a.subMenuContent div.text {
+        padding - top: 9px;
+        color: #545454;font-family: IntroRegular, Arial;font-size: 18px;}div.redArrow {display: none;width: 16px;height: 16px;position: absolute;top: 50%;left: 42px;margin-top: -8px;background: url(/images/redArrow.png) top left no-repeat transparent;}a.subMenuContent:hover div.text {color: # E2001A;
+    }
+    a.subMenuContent.selected div.text {
+        color: white;
+    }
+    a.subMenuContent.selected {
+        background - color: #E2001A;
+    }
+    a.subMenuContent.selected div.redArrow {
+        display: block;
+    }
+    div.scrollContainer {
+        position: absolute;
+        top: 0px;
+        left: 42px;
+        right: 0px;
+        bottom: 0px;
+        height: auto;
+        width: auto;
+    }
+    div.detailLinkContainer {
+        position: absolute;
+        left: 0px;
+        bottom: -51px;
+        width: 100 % ;
+        text - align: center;
+    }
+    a.detailLink {
+        position: absolute;
+        bottom: 0px;
+        left: 50 % ;
+        margin - left: -25px;
+    }
+    a.detailLink img {
+        display: block;
+    }
+    body.iDevice a.detailLink {
+        display: block;
+    }.sloganThickHorizontalCenterContainer {
+        position: absolute;
+        top: 0px;
+        left: 10px;
+        right: 10px;
+        bottom: 0px;
+    }.sloganThickVerticalCenterContainer {
+        display: table;
+        width: 100 % ;
+        height: 100 % ;
+    }
+    body.ie8.sloganThickVerticalCenterContainer {
+        display: block;
+        margin - top: 5 % ;
+    }.sloganThickContainer {
+        display: table - cell;
+        visibility: hidden;
+        margin: 0 auto;
+        vertical - align: middle;
+    }
+    body.iDevice.sloganThickContainer,
+    body.ie8.sloganThickContainer {
+        visibility: visible;
+    }.sloganThickContent {
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }.sloganThick {
+        font - size: 26px;
+        line - height: 27px;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        width: 100 % ;
+        color: white;
+        text - align: center;
+        padding: 0px 2px 2px 0;
+    }
+    body.iDevice.sloganThick {
+        font - size: 22px;
+        line - height: 23px;
+    }.sloganThickGrey {
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        color: black;
+        padding: 0px;
+        width: 100 % ; - moz - opacity: 0.50; - khtml - opacity: 0.50; - webkit - opacity: 0.50;
+        opacity: 0.50;
+        filter: alpha(opacity = 50);
+    }#Main - 2 {
+        background - color: #f1f1f1;
+    }
+    div.scrollContainer {
+        left: 0px;
+    }.projectContainer {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        overflow: hidden;
+    }.projectContainer img.absolute_image {
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }.hoverImageContainer {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100 % ;
+        height: 100 % ;
+        display: none;
+    }.sloganThickVerticalCenterContainer {
+        display: block;
+        height: auto;
+        position: absolute;
+        left: 0px;
+        bottom: 10 % ;
+        width: 100 % ;
+    }.sloganThickContainer {
+        visibility: visible;
+        top: 5 % ;
+        position: relative;
+        display: block;
+    }.sloganThick {
+        font - size: 22px;
+    }

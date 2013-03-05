@@ -1,0 +1,251 @@
+.ch-item {
+	width: 315px;
+	height: 315px;
+	border-radius: 0%;
+	position: relative;
+	cursor: default;
+	
+}
+
+.ch-img-1 { 
+	background-image: url(../headshots/alm2046-f.jpg);
+
+}
+
+.ch-img-2 { 
+	background-image: url(../headshots/bsb2002-f.jpg);
+	
+}
+
+.ch-img-3 { 
+	background-image: url(../headshots/cae2009-f.jpg);
+
+}
+
+.ch-img-4 { 
+	background-image: url(../headshots/chf2013-f.jpg);
+
+}
+
+.ch-img-5 { 
+	background-image: url(../headshots/chh2010-f.jpg);
+
+}
+
+.ch-img-6 { 
+	background-image: url(../headshots/dof2012-f.jpg);
+
+}
+
+.ch-img-7 { 
+	background-image: url(../headshots/dwd2001-f.jpg);
+
+}
+
+.ch-img-8 { 
+	background-image: url(../headshots/elc2013-f.jpg);
+	}
+	
+.ch-img-9 { 
+	background-image: url(../headshots/hel2011-f.jpg);
+	}
+	
+	
+.ch-img-10 { 
+	background-image: url(../headshots/ikar-f.jpg);
+	}	
+	
+	
+.ch-img-11 { 
+	background-image: url(../headshots/jas2005-f.jpg);
+	}	
+	
+.ch-img-12 { 
+	background-image: url(../headshots/joh2002-f.jpg);
+	}	
+
+.ch-img-13 { 
+	background-image: url(../headshots/pht2003-f.jpg);
+	}		
+.ch-img-14 { 
+	background-image: url(../headshots/stg2008-f.jpg);
+	}		
+	
+	
+.ch-img-15 { 
+	background-image: url(../headshots/tiw9014-f.jpg);
+	}		
+	
+.ch-img-16 { 
+	background-image: url(../headshots/xif2005-f.jpg);
+	}		
+	
+	
+.ch-img-17 { 
+	background-image: url(../headshots/joh2048-f.jpg);
+	}	
+	
+.ch-info {
+	position: absolute;
+	background: rgba(191,15,78, .95);
+	width: inherit;
+	height: inherit;
+	border-radius: 0%;
+	opacity: 0;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-o-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	-webkit-backface-visibility: hidden;
+
+
+}
+
+h2.groupname {
+text-align:center;
+font-size: 18px;
+margin: 0;
+color: #a0a4a5;
+padding-top:25px;
+margin-bottom:0px;
+text-transform:uppercase;
+}
+
+
+
+.groupsub {font-size:13px; font-style: italic;}
+
+.ch-info h3 {
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin: 0 30px;
+	padding: 45px 0 0 0;
+	height: 140px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	text-shadow: 
+		0 0 1px #fff, 
+		0 1px 2px rgba(0,0,0,0.3);
+}
+
+.ch-info p {
+	color: #fff;
+	padding: 10px 5px;
+	margin: 0 30px;
+	font-size: 20px;
+	opacity: 0;
+	-webkit-transition: all 1s ease-in-out 0.4s;
+	-moz-transition: all 1s ease-in-out 0.4s;
+	-o-transition: all 1s ease-in-out 0.4s;
+	-ms-transition: all 1s ease-in-out 0.4s;
+	transition: all 1s ease-in-out 0.4s;
+}
+
+
+p.port {
+
+border-top-style:solid;
+border-top-width:1px;
+border-top-color:#fff;
+margin-top:5px;
+}
+
+.ch-info p a.portfolio {font-size:14px; padding-top:10px;}
+
+.ch-info p a {
+	
+	color: #fff;
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding-top: 4px;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+.ch-info p a:hover {
+	color: #a0a4a5;
+	
+	
+}
+
+.ch-item:hover {
+	box-shadow: 
+		inset 0 0 0 1px rgba(255,255,255,0.1),
+		0 1px 2px rgba(0,0,0,0.1);
+}
+.ch-item:hover .ch-info {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+.ch-item:hover .ch-info p {
+	opacity: 1;
+}
+
+#sidebar { 
+  width: 120px; 
+  position: fixed; 
+  margin-left: 50px; 
+  z-index:9999;
+  margin-top:100px;
+
+}
+#sidehead {
+background:#bf0f4e;
+padding:7px;
+font-size: 12px;
+}
+
+#sidehead a {
+color:#fff;
+text-transform:uppercase;
+}
+
+#sidebar ul {
+list-style-type:none;
+margin:0px;
+background-color:#a0a4a5;
+z-index:99999;
+padding:0px;
+margin-top:1px;
+
+
+}
+
+#sidebar ul li {
+display:block;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-size: 12px;
+padding-left:10px;
+padding-right:5px;
+padding-top:8px;
+padding-bottom:8px;
+border-bottom-style:SOLID;
+border-bottom-width:1px;
+border-bottom-color:#7e7e7f;
+}
+
+
+#sidebar ul li a {
+color:#fff;
+}
+
+#sidebar ul li:hover {
+background-color:#8e9597;
+	
+}
+

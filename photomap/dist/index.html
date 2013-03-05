@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      h1 {
+		margin-bottom:0;
+     }
+      body {
+        margin: 0px;
+        padding: 0px;
+		font-family: "Calibri","Helvetica-Neue", "Helvetica", "Arial", sans-serif; 
+      }
+	ul {
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+    }
+	li {
+		//color: white;
+		padding-left: 10px;
+		padding-top:5px;
+		padding-bottom:5px;
+		font-weight: bold;
+	}
+      #container {
+        background-color: white;
+        background-image: url("./3FloorsMap_bw.png");
+        background-position: 1px 0px;
+        background-repeat: no-repeat;
+        width: 541px;
+        height: 700px;
+		//float: left;
+		margin-left: auto ;
+		margin-right: auto ;
+      }
+	  #legend {
+		float: right;
+		width: 250px;
+		height: auto;
+		margin-top: 75px;
+		margin-right: 10px;
+	  }
+	  #header {
+		text-align: center;
+	  }
+    </style>
+
+	<!-- Attach our CSS -->
+  	<link rel="stylesheet" href="reveal/reveal.css">	
+  	
+	<!-- Attach necessary scripts -->
+	<!-- <script type="text/javascript" src="jquery-1.4.4.min.js"></script> -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.min.js"></script>
+	<script type="text/javascript" src="reveal/jquery.reveal.js"></script>
+
+	</style>
+  </head>
+  <body>
+	<div id="header">
+		<h1>WEILL CORNELL FLOOR PLAN</h1>
+	</div>
+    <div id="container"></div>
+    <script src="http://www.html5canvastutorials.com/libraries/kinetic-v4.3.0-beta2.js"></script>
+    <script>
+      function getData() {
+        return {
+          '1. Anatomy Lab': {
+			name: 'cell biology',
+			whichModal: "01",
+            color: 'greenyellow',
+			points: [80, 535, 65, 573, 23, 574, 50, 518, 53, 518, 58, 506, 126, 506, 123, 519, 79, 519, 82, 512, 76, 511, 68, 530, 76, 530, 75, 534]
+          },
+          '2. Cell & Developmental Biology': {
+			name: 'cell biology',
+			whichModal: "02",
+            color: 'greenyellow',
+            points: [87, 366, 86, 367, 88, 368, 86, 371, 84, 371, 83, 375, 85, 375, 83, 379, 81, 379, 80, 382, 82, 383, 80, 386, 78, 386, 77, 390, 79, 390, 78, 393, 76, 393, 74, 399, 55, 398, 57, 393, 62, 394, 65, 387, 60, 387, 70, 366]
+          },
+		  '3. Interim Dean of Graduate School, Randi Silver': {
+			name: 'graduate school',
+			whichModal: "03",
+            color: 'orange',
+            points: [112, 366, 116, 354, 148, 355, 147, 365]
+          },
+		  '4. Vice Provost of Development, Larry Schafer': {
+			name: 'development',
+			whichModal: "04",
+            color: '#8DC657',
+            points: [115, 355, 112, 366, 86, 366, 87, 363, 91, 363, 95, 354]
+          },
+		  '5. Harold & Ruth Uris Faculty Room': {
+			name: 'faculty room',
+			whichModal: "05",
+            color: 'grey',
+            points: [124, 322, 162, 322, 158, 338, 137, 337, 136, 339, 137, 339, 135, 349, 103, 349, 107, 338, 118, 338]
+          },
+		  '6. Assistant Provost, Harry Lander': {
+			name: 'core lab',
+			whichModal: "06",
+            color: '#234194',
+            points: [158, 338, 155, 349, 145, 349, 145, 350, 136, 350, 136, 349, 135, 349, 137, 339, 136, 339, 136, 337, 148, 337, 148, 338]
+          },
+		  '7. Graduate School of Medical Sciences Offices': {
+			name: 'graduate school',
+			whichModal: "07",
+            color: 'orange',
+            points: [147, 355, 188, 355, 188, 359, 184, 362, 181, 363, 171, 363, 168, 366, 143, 366, 146, 356]
+          },
+		  '8. Genomics Resources Core Facility': {
+			name: 'core lab',
+			whichModal: "08",
+            color: '#234194',
+            points: [89, 305, 106, 305, 107, 306, 105, 311, 110, 311, 106, 319, 101, 319, 100, 322, 82, 322]
+          },
+		  '9. Art & Photography Department': {
+			name: 'its',
+			whichModal: "09",
+            color: '#93288A',
+            points: [81, 322, 99, 322, 98, 325, 104, 325, 105, 322, 123, 322, 118, 338, 75, 337]
+          },
+		  '10. Uris Auditorium': {
+			name: 'uris auditorium',
+			whichModal: "10",
+            color: '#00A155',
+            points: [172, 366, 175, 366, 175, 368, 186, 368, 190, 370, 198, 371, 201, 368, 213, 368, 213, 366, 215, 366, 214, 392, 209, 393, 210, 395, 214, 395, 214, 399, 207, 399, 205, 394, 176, 393, 175, 397, 172, 399, 166, 399, 166, 396, 171, 393, 167, 392]
+          },
+		  '12. Tri Institutional MD-PhD Program': {
+			name: 'md-phd',
+			whichModal: "12",
+            color: 'red',
+            points: [201, 357, 209, 357, 209, 355, 235, 355, 235, 365, 229, 365, 229, 367, 231, 367, 231, 368, 234, 368, 234, 372, 223, 372, 223, 365, 216, 365, 216, 363, 203, 363, 201, 361]
+          },
+		  '13. Loading Dock': {
+			name: 'loading dock',
+			whichModal: "13",
+            color: '#C3B59E',
+            points: [77, 489, 164, 489, 160, 506, 70, 505]
+          },
+		  '14. Samuel J Wood Library': {
+			name: 'library',
+			whichModal: "14",
+            color: '#F7A8AE',
+            points: [318, 366, 327, 366, 327, 364, 330, 364, 330, 361, 339, 361, 339, 356, 388, 356, 384, 345, 420, 345, 427, 361, 441, 360, 443, 365, 439, 365, 447, 382, 452, 382, 461, 397, 392, 398, 389, 391, 377, 391, 376, 399, 371, 398, 371, 399, 354, 399, 352, 387, 341, 387, 343, 399, 324, 399]
+          },
+		  '15. 1300 York Entrance': {
+			name: 'entrance',
+			whichModal: "15",
+            color: 'grey',
+            points: [217, 396, 217, 391, 214, 391, 216, 365, 223, 365, 223, 372, 256, 372, 256, 374, 261, 374, 261, 381, 257, 381, 258, 397]
+          },
+		  '16. WCMC Deans Corridor': {
+			name: 'corridor',
+			whichModal: "16",
+            color: '#C49972',
+            points: [186, 296, 222, 295, 219, 339, 215, 339, 214, 344, 202, 343, 201, 349, 193, 348, 193, 345, 174, 345, 174, 347, 172, 347, 172, 349, 163, 349, 166, 338, 176, 338, 178, 327, 180, 327, 181, 324, 187, 324, 188, 314, 180, 314, 183, 302, 185, 302]
+          },
+		  '17. Griffis Faculty Club': {
+			name: 'faculty club',
+			whichModal: "17",
+            color: '#517DA9',
+            points: [271, 298, 293, 298, 292, 288, 300, 289, 301, 298, 306, 299, 307, 310, 345, 310, 345, 311, 348, 311, 349, 315, 347, 315, 349, 323, 352, 323, 353, 326, 351, 326, 351, 328, 353, 328, 356, 337, 355, 338, 356, 340, 360, 350, 344, 351, 342, 345, 340, 345, 340, 350, 319, 350, 315, 348, 314, 342, 317, 339, 332, 340, 330, 337, 329, 331, 298, 331, 297, 326, 273, 326, 273, 322, 270, 321, 270, 315, 273, 314, 272, 311, 269, 311, 269, 306, 279, 306, 279, 304, 271, 304]
+          },
+		  '18. Biochemistry & Research Center': {
+			name: 'biochem',
+			whichModal: "18",
+            color: 'red',
+            points: [444, 365, 453, 382, 446, 382, 439, 366]
+          },
+		  '19. Conference Room': {
+			name: 'conference room',
+			whichModal: "19",
+            color: '#774C2F',
+            points: [113, 110, 149, 111, 145, 131, 137, 131, 135, 137, 114, 137, 117, 127, 108, 127]
+          },
+		  '20. Pathology - Autopsy Room': {
+			name: 'pathology',
+			whichModal: "20",
+            color: '#FDC58E',
+            points: [87, 523, 122, 524, 117, 534, 82, 534]
+          },
+		  '21. Garden Cafe': {
+			name: 'cafeteria',
+			whichModal: "21",
+            color: 'green',
+            points: [164, 490, 276, 488, 279, 519, 157, 519]
+          },
+		  '22. ITS Office': {
+			name: 'its',
+			whichModal: "22",
+            color: '#93288A',
+            points: [314, 525, 318, 525, 319, 527, 325, 527, 325, 525, 381, 525, 382, 527, 386, 527, 390, 537, 384, 537, 389, 554, 395, 554, 400, 572, 342, 572, 338, 554, 321, 554, 320, 546, 327, 546, 325, 535, 316, 536]
+          },
+		  'Cell Biology ': {
+			name: 'cell biology',
+			
+			whichModal: "none",
+            color: 'greenyellow',
+            points: [28, 399, 52, 352, 53, 352, 57, 344, 58, 345, 62, 339, 74, 339, 74, 341, 80, 341, 78, 350, 75, 350, 77, 345, 72, 345, 68, 351, 63, 351, 55, 368, 60, 368, 52, 383, 53, 383, 45, 399]
+          },
+		  'Cell Biology  ': {
+			name: 'cell biology',
+			
+			whichModal: "none",
+            color: 'greenyellow',
+            points: [53, 153, 94, 153, 92, 160, 73, 160, 73, 156, 67, 156, 64, 165, 58, 165, 52, 182, 56, 182, 56, 185, 66, 185, 68, 179, 73, 179, 74, 176, 80, 176, 79, 182, 86, 182, 77, 213, 24, 213, 44, 167, 48, 167]
+          },
+		  'Pathology': {
+			name: 'pathology',
+			
+			whichModal: "none",
+            color: '#FDC58E',
+            points: [123, 524, 155, 524, 152, 535, 120, 534]
+          },
+		  '10. Uris Auditorium ': {
+			name: 'uris auditorium',
+			
+			whichModal: "10",
+            color: '#00A155',
+            points: [154, 534, 158, 534, 160, 524, 172, 524, 172, 528, 169, 528, 169, 531, 171, 530, 171, 534, 178, 533, 179, 525, 188, 525, 188, 527, 193, 527, 190, 552, 150, 552]
+          },
+		  '14. Samuel J Wood Library   ': {
+			name: 'library',
+			
+			whichModal: "14",
+            color: '#F7A8AE',
+            points: [187, 582, 261, 582, 261, 589, 282, 589, 283, 616, 183, 616]
+          },
+		  '14. Samuel J Wood Library ': {
+			name: 'library',
+			
+			whichModal: "14",
+            color: '#F7A8AE',
+            points: [193, 524, 278, 525, 278, 536, 263, 536, 263, 539, 282, 539, 282, 541, 285, 541, 285, 538, 290, 538, 290, 533, 298, 533, 298, 536, 294, 536, 294, 537, 299, 537, 299, 545, 313, 546, 310, 528, 314, 528, 316, 538, 319, 538, 319, 545, 317, 545, 317, 546, 320, 546, 321, 554, 338, 554, 341, 571, 280, 571, 279, 547, 268, 547, 268, 571, 188, 571]
+          },
+		  '14. Samuel J Wood Library  ': {
+			name: 'library',
+			
+			whichModal: "14",
+            color: '#F7A8AE',
+            points: [256, 368, 258, 368, 258, 367, 262, 367, 262, 365, 266, 365, 266, 371, 278, 371, 279, 369, 316, 369, 318, 378, 316, 378, 317, 380, 318, 380, 318, 383, 321, 383, 323, 396, 310, 396, 310, 395, 306, 395, 306, 397, 281, 396, 281, 395, 277, 395, 277, 397, 261, 396, 261, 395, 257, 395, 257, 381, 261, 381, 261, 373, 256, 373]
+          },
+		  '22. ITS Office  ': {
+			name: 'its',
+			
+			whichModal: "22",
+            color: '#93288A',
+            points: [278, 506, 318, 507, 321, 520, 279, 520]
+          },
+		  '22. ITS Office ': {
+			name: 'its',
+			
+			whichModal: "22",
+            color: '#93288A',
+            points: [337, 507, 375, 507, 379, 521, 339, 521]
+          },
+		  'Graduate School': {
+			name: 'graduate school',
+			
+			whichModal: "none",
+            color: 'orange',
+            points: [170, 314, 178, 314, 178, 316, 180, 316, 180, 314, 188, 314, 187, 324, 178, 324, 177, 329, 167, 329]
+          },
+		  'Core Lab': {
+			name: 'core lab',
+			
+			whichModal: "none",
+            color: '#234194',
+            points: [116, 296, 142, 296, 139, 307, 112, 307]
+          },
+		  'Weill Auditorium/Education Center': {
+			name: 'weill auditorium',
+			
+			whichModal: "none",
+            color: '#26ABDD',
+            points: [195, 153, 210, 153, 210, 158, 195, 158]
+          },
+		  'Weill Auditorium/Education Center ': {
+			name: 'weill auditorium',
+			
+			whichModal: "none",
+            color: '#26ABDD',
+            points: [228, 153, 354, 153, 357, 163, 228, 163]
+          },
+		  'Weill Auditorium/Education Center  ': {
+			name: 'weill auditorium',
+			
+			whichModal: "none",
+            color: '#26ABDD',
+            points: [317, 180, 335, 180, 343, 205, 351, 205, 342, 180, 363, 180, 375, 212, 326, 212]
+          },
+/* // obscures the ellipse
+		  'Weill Auditorium/Education Center   ': {
+			name: 'weill auditorium',
+			
+			whichModal: "none",
+            color: '#26ABDD',
+            points: [168, 170, 236, 170, 237, 181, 253, 181, 253, 176, 243, 176, 243, 170, 285, 170, 286, 175, 275, 176, 276, 181, 294, 180, 292, 171, 314, 170, 316, 180, 313, 180, 320, 210, 219, 210, 218, 179, 215, 179, 215, 213, 163, 212]
+          },
+*/
+		  '11. Weill Auditorium/Education Center': {
+			name: 'weill auditorium',
+			whichModal: "11",
+            color: '#26ABDD',
+            points: [267, 192]
+          },
+        }
+      }
+
+      function updateTooltip(tooltipText, tooltipRect, x, y, text) {
+        var tooltip = tooltipText.getParent();
+        tooltipText.setText(text);
+        tooltipRect.setSize(tooltipText.getWidth(), tooltipText.getHeight());
+        var maxRight = 200;
+        if(x > maxRight && text != 'ITS Office') {
+          x = maxRight;
+        }
+        tooltip.setPosition(x, y);
+        tooltip.show();
+      }
+      var stage = new Kinetic.Stage({
+        container: 'container',
+        width: 541,
+        height: 700
+      });
+      var shapesLayer = new Kinetic.Layer();
+	
+	  
+      
+      var tooltipLayer = new Kinetic.Layer();
+      var tooltip = new Kinetic.Group({
+      	opacity: 0.75,
+        visible: false,
+        listening: false
+      });
+      var tooltipText = new Kinetic.Text({
+        text: '',
+        fontFamily: 'Calibri',
+        fontSize: 14,
+        padding: 5,
+        fill: 'white'
+      });
+      
+      var tooltipRect = new Kinetic.Rect({
+        fill: 'black'
+      });
+
+      tooltip.add(tooltipRect).add(tooltipText);
+      tooltipLayer.add(tooltip);
+
+      // get areas data
+      var areas = getData();
+
+      // draw areas
+      for(var key in areas) {
+
+        var area = areas[key];
+        var points = area.points;
+
+		if (key == '11. Weill Auditorium/Education Center') {		
+	        var ellipseShape = new Kinetic.Ellipse({
+		        x: 269,
+		        y: 194,
+		        radius: {
+		          y: 11,
+		          x: 37
+		        },
+		        fill: '#26ABDD',
+		        opacity: 0.5,
+		        // custom attr
+		        key: key,
+				name: area.name,
+				whichModal: area.whichModal
+		      });
+
+	        shapesLayer.add(ellipseShape);
+		} else {
+	        var shape = new Kinetic.Polygon({
+	          points: points,
+	          fill: area.color,
+	          opacity: 0.5,
+	          // custom attr
+	          key: key,	
+			  name: area.name,
+			  whichModal: area.whichModal
+	        });
+
+	        shapesLayer.add(shape);
+		}
+      }
+
+      stage.add(shapesLayer);
+      stage.add(tooltipLayer);
+
+      stage.on('mouseover', function(evt) {
+		var shape = evt.shape;
+        shape.setOpacity(1);
+		var shapes = shapesLayer.get('.'+shape.attrs.name);
+		shapes.apply('setOpacity', 1.0);
+        shapesLayer.draw();
+      });
+      stage.on('mouseout', function(evt) {
+		var shape = evt.shape;
+        shape.setOpacity(0.5);
+		var shapes = shapesLayer.get('.'+shape.attrs.name);
+		shapes.apply('setOpacity', 0.5);
+        shapesLayer.draw();
+		
+		// hide the tool tip
+        tooltip.hide();
+      });
+      stage.on('mousemove', function(evt) {
+        var shape = evt.shape;
+        var mousePos = stage.getMousePosition();
+        var x = mousePos.x + 5;
+        var y = mousePos.y + 10;
+        updateTooltip(tooltipText, tooltipRect, x, y, shape.attrs.key);
+      }); 
+	stage.on('click', function(evt) {
+        var shape = evt.shape;
+		var modalName = shape.attrs.whichModal;
+		if (modalName != 'none') {
+			$("#"+modalName+"Modal").reveal();
+		}
+      });
+      
+      // tooltip redraw animation
+      var anim = new Kinetic.Animation(null, tooltipLayer);
+      anim.start();
+
+    </script>
+
+<!--
+<div id="legend">
+	<h3>Legend</h3>
+	<ul>
+		<li style="background-color:#F7A8AE;">Library</li>
+		<li style="background-color:#C3B59E;">Loading Dock</li>
+		<li style="background-color:#00A155;">Uris Auditorium</li>
+		<li style="background-color:#517DA9;">Griffis Faculty Club</li>
+		<li style="background-color:#FDC58E;">Pathology</li>
+		<li style="background-color:grey;">Conference Room A126</li>
+		<li style="background-color:#93288A;">ITS</li>
+		<li style="background-color:#C49972;">Dean's Corridor</li>
+		<li style="background-color:#8DC657;">Development</li>
+		<li style="background-color:red;">MD-PhD</li>
+		<li style="background-color:#234194;">Core Lab</li>
+		<li style="background-color:#774C2F;">Conference Room A250</li>
+		<li style="background-color:orange;">Graduate School</li>
+		<li style="background-color:#26ABDD;">Weill Auditorium & Ed Center</li>
+		<li style="background-color:greenyellow;">Cell Biology</li>
+	</ul>
+</div>
+-->
+
+<div id="01Modal" class="reveal-modal">
+	<h1>Anatomy Lab</h1>
+	<h2>(Basement)</h2>
+	<img style="width: 500px; height: auto;" src="photos/01.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="02Modal" class="reveal-modal">
+	<h1>Cell & Developmental Biology</h1>
+	<h2>(A101-A116)</h2>
+	<img style="width: 500px; height: auto;" src="photos/02.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="03Modal" class="reveal-modal">
+	<h1>Interim Dean of Graduate School</h1>
+	<h2>Randi Silver (A125-A127)</h2>
+	<img style="width: 500px; height: auto;" src="photos/03.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="04Modal" class="reveal-modal">
+	<h1>Vice Provost of Development</h1>
+	<h2>Larry Schafer (A121)</h2>
+	<img style="width: 500px; height: auto;" src="photos/04.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="05Modal" class="reveal-modal">
+	<h1>Harold & Ruth Uris Faculty Room</h1>
+	<h2>(A126)</h2>
+	<img style="width: 500px; height: auto;" src="photos/05.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="06Modal" class="reveal-modal">
+	<h1>Assistant Provost</h1>
+	<h2>Harry Lander (A128)</h2>
+	<img style="width: 500px; height: auto;" src="photos/06.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="07Modal" class="reveal-modal">
+	<h1>Graduate School of Medical Sciences Offices</h1>
+	<h2>(A131)</h2>
+	<img style="width: 500px; height: auto;" src="photos/07.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="08Modal" class="reveal-modal">
+	<h1>Genomics Resources Core Facility</h1>
+	<h2>(A50-A162)</h2>
+	<img style="width: 500px; height: auto;" src="photos/08.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="09Modal" class="reveal-modal">
+	<h1>Art & Photography Department</h1>
+	<h2>(A169-A179)</h2>
+	<img style="width: 500px; height: auto;" src="photos/09.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="10Modal" class="reveal-modal">
+	<h1>Uris Auditorium</h1>
+	<img style="width: 500px; height: auto;" src="photos/10.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="11Modal" class="reveal-modal">
+	<h1>Weill Auditorium/Education Center</h1>
+	<h2>(C200)</h2>
+	<img style="width: 500px; height: auto;" src="photos/11.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="12Modal" class="reveal-modal">
+	<h1>Tri Institutional MD-PhD Program</h1>
+	<h2>(C103)</h2>
+	<img style="width: 500px; height: auto;" src="photos/12.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="13Modal" class="reveal-modal">
+	<h1>Loading Dock</h1>
+	<h2>(A026)</h2>
+	<img style="width: 500px; height: auto;" src="photos/13.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="14Modal" class="reveal-modal">
+	<h1>Samuel J Wood Library</h1>
+	<h2>(C107-C119 & D120 & LC101-LC106<br/>
+	C003-C019 & D012-014 & LC004-011)</h2>
+	<img style="width: 500px; height: auto;" src="photos/14.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="15Modal" class="reveal-modal">
+	<h1>1300 York Entrance</h1>
+	<img style="width: 500px; height: auto;" src="photos/15.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="16Modal" class="reveal-modal">
+	<h1>WCMC Deans Corridor</h1>
+	<h2>(F100-F113)</h2>
+	<img style="width: 500px; height: auto;" src="photos/16.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="17Modal" class="reveal-modal">
+	<h1>Griffis Faculty Club</h1>
+	<h2>(D115-D117 & GH 102-GH 107)</h2>
+	<img style="width: 500px; height: auto;" src="photos/17.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="18Modal" class="reveal-modal">
+	<h1>Biochemistry & Research Center</h1>
+	<h2>(E-LC Access between Floors 1 & 2)</h2>
+	<img style="width: 500px; height: auto;" src="photos/18.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="19Modal" class="reveal-modal">
+	<h1>Conference Room - A250</h1>
+	<img style="width: 500px; height: auto;" src="photos/19.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="20Modal" class="reveal-modal">
+	<h1>Pathology - Autopsy Room</h1>
+	<img style="width: 500px; height: auto;" src="photos/20.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="21Modal" class="reveal-modal">
+	<h1>Garden Cafe</h1>
+	<h2>(A021 & A022)</h2>
+	<img style="width: 500px; height: auto;" src="photos/21.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="22Modal" class="reveal-modal">
+	<h1>ITS Office</h1>
+	<img style="width: 500px; height: auto;" src="photos/22.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,16 @@
+December 2012 - 10% time project
+
+Inspiration: http://www.abm.at/de/akteure
+
+Our code:
+/oac/webdocs/beta.weill/project_tux
+
+---
+
+To do
+- resize images to 300 x 300
+  http://osxdaily.com/2011/12/20/batch-resize-pictures-in-mac-os-x-using-automator/
+- create "film strips" like 514.jpeg
+- setup the html
+- setup the js
+  - rotateHeads()

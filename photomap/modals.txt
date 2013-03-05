@@ -1,0 +1,128 @@
+<div id="01Modal" class="reveal-modal">
+	<h1>Anatomy Lab</h1>
+	<h2>(Basement)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/01.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="02Modal" class="reveal-modal">
+	<h1>Cell & Developmental Biology</h1>
+	<h2>(A101-A116)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/02.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="03Modal" class="reveal-modal">
+	<h1>Interim Dean of Graduate School</h1>
+	<h2>Randi Silver (A125-A127)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/03.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="04Modal" class="reveal-modal">
+	<h1>Vice Provost of Development</h1>
+	<h2>Larry Schafer< (A121)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/04.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="05Modal" class="reveal-modal">
+	<h1>Harold & Ruth Uris Faculty Room</h1>
+	<h2>(A126)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/05.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="06Modal" class="reveal-modal">
+	<h1>Assistant Provost</h1>
+	<h2>Harry Lander (A128)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/06.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="07Modal" class="reveal-modal">
+	<h1>Graduate School of Medical Sciences Offices</h1>
+	<h2>(A131)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/07.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="08Modal" class="reveal-modal">
+	<h1>Genomics Resources Core Facility</h1>
+	<h2>(A50-A162)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/08.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="09Modal" class="reveal-modal">
+	<h1>Art & Photography Department</h1>
+	<h2>(A169-A179)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/09.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="10Modal" class="reveal-modal">
+	<h1>Uris Auditorium</h1>
+	<img style="width: 500px; height: auto;" src="../photos/10.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="11Modal" class="reveal-modal">
+	<h1>Weill Auditorium/Education Center</h1>
+	<h2>(C200)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/11.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="12Modal" class="reveal-modal">
+	<h1>Tri Institutional MD-PhD Program</h1>
+	<h2>(C103)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/12.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="13Modal" class="reveal-modal">
+	<h1>Loading Dock</h1>
+	<h2>(A026)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/13.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="14Modal" class="reveal-modal">
+	<h1>Samuel J Wood Library</h1>
+	<h2>(C107-C119 & D120 & LC101-LC106<br/>
+	C003-C019 & D012-014 & LC004-011)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/14.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="15Modal" class="reveal-modal">
+	<h1>1300 York Entrance</h1>
+	<img style="width: 500px; height: auto;" src="../photos/15.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="16Modal" class="reveal-modal">
+	<h1>WCMC Deans Corridor</h1>
+	<h2>(F100-F113)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/16.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="17Modal" class="reveal-modal">
+	<h1>Griffis Faculty Club</h1>
+	<h2>(D115-D117 & GH 102-GH 107)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/17.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="18Modal" class="reveal-modal">
+	<h1>Biochemistry & Research Center</h1>
+	<h2>(E-LC Access between Floors 1 & 2)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/18.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="19Modal" class="reveal-modal">
+	<h1>Conference Room - A250</h1>
+	<img style="width: 500px; height: auto;" src="../photos/19.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="20Modal" class="reveal-modal">
+	<h1>Pathology - Autopsy Room</h1>
+	<img style="width: 500px; height: auto;" src="../photos/20.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="21Modal" class="reveal-modal">
+	<h1>Garden Cafe</h1>
+	<h2>(A021 & A022)</h2>
+	<img style="width: 500px; height: auto;" src="../photos/21.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="22Modal" class="reveal-modal">
+	<h1>ITS Office</h1>
+	<img style="width: 500px; height: auto;" src="../photos/22.jpg"/>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
