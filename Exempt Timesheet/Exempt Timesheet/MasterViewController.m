@@ -215,13 +215,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Timesheet *t = savedTimesheets[indexPath.row];
+    Timesheet *t = [savedTimesheets objectAtIndex:indexPath.row];
     [self.delegate didSelectTimesheetToView:t];
 }
 
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    Timesheet *t = savedTimesheets[indexPath.row];
+    Timesheet *t = [savedTimesheets objectAtIndex:indexPath.row];
     [self.delegate didSelectTimesheetToView:t];
 }
 
